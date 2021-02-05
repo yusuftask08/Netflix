@@ -24,8 +24,8 @@
 
 
 <script>
-import secondItem from "@/components/secondItem";
-import navBarItem from "@/components/navBarItem";
+import secondItem from "@/components/Home/secondItem";
+import navBarItem from "@/components/Home/navBarItem";
 
 
 export default {

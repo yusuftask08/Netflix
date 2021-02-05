@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import movieListItem from "@/components/movieListItem";
+import movieListItem from "@/components/Home/movieListItem";
 // import axios from "axios";
 import { mapGetters } from "vuex";
 export default {

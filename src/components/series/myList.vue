@@ -1,23 +1,24 @@
 <template>
-  <template>
-    <div>
-      <div class="text-span">
-        <span> Listem </span>
-      </div>
-      <div class="container-card">
-        <div
-          class="imdb"
-          v-for="list in list"
-          :key="list.imdbID"
-        >
-          <div class="ms-2 movie_card">
-            <img :src="list.Poster" class="card-img-top" alt="..." />
-            <h3 class="title text-white">{{ list.Title }}</h3>
-          </div>
+  <div class="scrollbar">
+    <div class="text-span">
+      <span> Listem  </span>
+    </div>
+    <div class="container-card">
+      <div class="imdb" v-for="seriesList in seriesList" :key="seriesList.id">
+        <div class="ms-3 movie_card">
+          <img
+            :src="'http://image.tmdb.org/t/p/w500/' + seriesList.poster_path"
+            width="100px"
+            class="card-img-top"
+            alt="..."
+          />
+          <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
+          <p class="text-white">{{ seriesList.vote_count }}</p>
+          <!-- <p class="text-white"> {{ seriesList.overview }}</p> -->
         </div>
       </div>
     </div>
-  </template>
+  </div>
 </template>
 <script>
 import axios from "axios";
@@ -25,15 +26,17 @@ import axios from "axios";
 export default {
   data() {
     return {
-      list: [],
+      seriesList: [],
     };
   },
   created() {
     axios
-      .get("http://www.omdbapi.com/?apiKey=38657152&s=harry potter")
+      .get(
+        "https://api.themoviedb.org/3/movie/popular?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&page=2"
+      )
       .then((response) => {
-        console.log("list", response);
-        this.list = response.data.Search;
+        console.log("seriesList", response);
+        this.seriesList = response.data.results;
       });
   },
 };

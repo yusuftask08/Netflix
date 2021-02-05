@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import navBar from "@/components/navBar";
-import backgroundMovie from "@/components/backgroundMovie";
+import navBar from "@/components/Home/navBar";
+import backgroundMovie from "@/components/Home/backgroundMovie";
 export default {
     components: {
         navBar,

@@ -7,18 +7,26 @@
     <sliderHomeThree />
     <sliderHomeFour />
     <sliderHomeFive />
+    <netflixOriginalContent />
+    <diziler />
+    <onerilenBreaking />
+    <topTenSeries />
   </div>
 </template>
 
  
 <script>
-import backgroundMovie from "@/components/backgroundMovie";
-import movieList from "@/components/movieList";
-import sliderHome from "@/components/sliderHome";
-import sliderHomeTwo from '@/components/sliderHomeTwo';
-import sliderHomeThree from '@/components/sliderHomeThree.vue';
-import sliderHomeFour from '@/components/sliderHomeFour.vue';
-import sliderHomeFive from '@/components/sliderHomeFive.vue';
+import backgroundMovie from "@/components/Home/backgroundMovie";
+import movieList from "@/components/Home/movieList";
+import sliderHome from "@/components/Home/sliderHome";
+import sliderHomeTwo from '@/components/Home/sliderHomeTwo';
+import sliderHomeThree from '@/components/Home/sliderHomeThree.vue';
+import sliderHomeFour from '@/components/Home/sliderHomeFour.vue';
+import sliderHomeFive from '@/components/Home/sliderHomeFive.vue';
+import netflixOriginalContent from '@/components/Home/netflixOriginalContent.vue';
+import diziler from '@/components/series/diziler.vue';
+import onerilenBreaking from '@/components/series/onerilenBreaking.vue';
+import topTenSeries from '@/components/series/topTenSeries.vue';
 
 
 
@@ -30,7 +38,11 @@ export default {
     sliderHomeTwo,
     sliderHomeThree,
     sliderHomeFour,
-    sliderHomeFive
+    sliderHomeFive,
+    netflixOriginalContent,
+    diziler,
+    onerilenBreaking,
+    topTenSeries,
   },
 };
 </script>
