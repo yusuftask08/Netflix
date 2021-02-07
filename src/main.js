@@ -1,11 +1,21 @@
-import { createApp } from 'vue'
+import {
+    createApp
+} from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import "./assets/style.css"
-import { Swiper, SwiperSlide } from "swiper/vue";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
+// import {
+//     BootstrapVue,
+//     BootstrapVueIcons
+// } from 'bootstrap-vue'
+
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// Vue.use(BootstrapVue)
+// Vue.use(BootstrapVueIcons)
 
 
 

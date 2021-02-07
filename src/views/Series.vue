@@ -7,6 +7,7 @@
     <onerilenDiziler />
     <onerilenBreaking />
     <netflix />
+    <deneme />
   </div>
 </template>
 <script>
@@ -17,6 +18,8 @@ import topTenSeries from "@/components/series/topTenSeries";
 import onerilenDiziler from "@/components/series/onerilenDiziler";
 import onerilenBreaking from "@/components/series/onerilenBreaking";
 import netflix from "@/components/series/netflix";
+import deneme from "@/components/series/deneme";
+
 
 export default {
   components: {
@@ -27,6 +30,7 @@ export default {
     onerilenDiziler,
     onerilenBreaking,
     netflix,
+    deneme,
   },
 };
 </script>

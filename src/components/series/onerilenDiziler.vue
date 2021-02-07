@@ -5,7 +5,7 @@
     </div>
     <div class="container-card">
       <div class="imdb" v-for="seriesList in seriesList" :key="seriesList.id">
-        <div class="ms-3 movie_card">
+        <div class="ms-3 movie_card item">
           <img
             :src="'http://image.tmdb.org/t/p/w500/' + seriesList.poster_path"
             width="100px"

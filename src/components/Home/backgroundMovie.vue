@@ -10,7 +10,7 @@
             <p>
                 Bill Gates gelişmekte olan dünyaya daha iyi sıhhi tesisat sağlamayıamaçlayan ölüm kalım görevi hakkında konuşuyor. Gates'in kız kardeşleri çocukluk anılarını paylaşıyor.
             </p>
-            <button id="buttonPlay">
+            <button id="buttonPlay" >
                 <i class="fas fa-play"></i>
             
             <span>Oynat</span>
@@ -19,9 +19,10 @@
             <button id="buttonInfo">
                 <i class="fas fa-info-circle"></i>
             
-            <span> Daha fazla bilgi al</span>
+            <span> Daha Fazla Bilgi</span>
           </button>
         </div>
+        
     </div>
     </div>
 </template>

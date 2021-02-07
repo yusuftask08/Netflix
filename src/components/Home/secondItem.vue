@@ -9,7 +9,7 @@
         placeholder="Hadi birşey arayalım.."
         @keydown.enter="searchMovie(searchKey)"
       />
-      
+
     </div>
     <i
       @click="searchopen = !searchopen"
@@ -38,17 +38,17 @@
 
 <script>
 // import axios from "axios";
-import { mapActions} from "vuex";
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      searchopen: true,
-      searchKey : null,
+      searchopen: false,
+      searchKey: null,
     };
   },
-    methods : {
-        ...mapActions(["searchMovie"])
-    },
+  methods: {
+    ...mapActions(["searchMovie"]),
+  },
   created() {},
 };
 </script>

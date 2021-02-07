@@ -1,35 +1,36 @@
-<template>
-  <div class="text-span">
-    <span> Swiper deneme </span>
-  </div>
+  <template>
+  <div class="izlemeydevam">
+    <div class="text-span">
+      <span> Swiper deneme </span>
+    </div>
 
-  <swiper
-    :slides-per-view="5"
-    :space-between="50"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-    :mousewheel-control="false"
-    :performance-mode="false"
-    :pagination-visible="true"
-    :pagination-clickable="false"
-    navigation
-    class="item ms-5"
-  >
-    <swiper-slide v-for="seriesList in seriesList" :key="seriesList.id">
-      <div 
-      class="ms-2 me-2 movie_card item">
-        <img
-          :src="'http://image.tmdb.org/t/p/w500/' + seriesList.poster_path"
-          class="card-img-top cover"
-          alt="..."
-        />
-        <div class="list-icon-left text">
-          <i class="fas fa-play"></i>
-          <i class="fas fa-plus"></i>
+    <swiper
+      :slides-per-view="5"
+      :space-between="50"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+      :mousewheel-control="false"
+      :performance-mode="false"
+      :pagination-visible="true"
+      :pagination-clickable="false"
+      navigation
+      class="item ms-5"
+    >
+      <swiper-slide v-for="seriesList in seriesList" :key="seriesList.id">
+        <div class="ms-2 me-2 movie_card item">
+          <img
+            :src="'http://image.tmdb.org/t/p/w500/' + seriesList.poster_path"
+            class="card-img-top cover"
+            alt="..."
+          />
+          <div class="list-icon-left text">
+            <i class="fas fa-play"></i>
+            <i class="fas fa-plus"></i>
+          </div>
         </div>
-      </div>
-    </swiper-slide>
-  </swiper>
+      </swiper-slide>
+    </swiper>
+    </div>
 </template>
 <script>
 // Import Swiper Vue.js components

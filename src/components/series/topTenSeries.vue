@@ -3,7 +3,7 @@
     <span> Günün Popüler Dizileri </span>
   </div>
   <div class="container-card">
-    <div class="imdb" v-for="seriesList in seriesList" :key="seriesList.id">
+    <div class="" v-for="seriesList in seriesList" :key="seriesList.id">
       <div class="ms-2 me-2 movie_card item">
         <img
           :src="'http://image.tmdb.org/t/p/w500/' + seriesList.poster_path"
@@ -11,15 +11,20 @@
           class="card-img-top"
           alt="..."
         />
-     
-          <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
-          <!-- <p class="text-white">{{ seriesList.vote_count }}</p> -->
-          <div class="film_info">
-            <!-- <p class="text-white"> {{ seriesList.overview }}</p> -->
+        <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
+        <!-- <p class="text-white">{{ seriesList.vote_count }}</p> -->
+        <!-- <p class="text-white">{{ seriesList.overview }}</p> -->
+        <div class="film_info">
+          <div class="list-icon-left">
+            <i class="fas fa-play"></i>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-angle-down" style="font-size: 12px !important">
+            </i>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
 import axios from "axios";

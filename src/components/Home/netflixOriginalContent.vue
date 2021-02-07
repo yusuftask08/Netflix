@@ -1,21 +1,31 @@
 <template>
-    <div class="text-span">
-      <span> Netlix Orijinal İçerikleri  </span>
-    </div>
-    <div class="container-card-original ms-5">
-      <div class="imdb " v-for="gundemList in gundemList" :key="gundemList.id">
-        <div class="ms-3 originalCard">
-          <img
-            :src="'http://image.tmdb.org/t/p/w500/' + gundemList.poster_path"
-            class="card-img-top"
-            alt="..."
-          />
-          <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
-          <p class="text-white">{{ gundemList.vote_count }}</p>
-          <!-- <p class="text-white"> {{ seriesList.overview }}</p> -->
+  <div class="text-span">
+    <span> Netlix Orijinal İçerikleri </span>
+  </div>
+  <div class="container-card-original ms-5">
+    <div class="imdb" v-for="gundemList in gundemList" :key="gundemList.id">
+      <div class="ms-3 originalCard">
+        <img
+          :src="'http://image.tmdb.org/t/p/w500/' + gundemList.poster_path"
+          class="card-img-top"
+          alt="..."
+        />
+        <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
+        <div class="film_info_original_card">
+          <div class="list-icon-left_original">
+            <i class="fas fa-play"></i>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-chevron-down">
+              <div class="tooltip">
+                <span class="tooltiptext"> Daha Fazla Bilgi</span>
+              </div>
+            </i>
+          </div>
         </div>
+        <!-- <p class="text-white"> {{ seriesList.overview }}</p> -->
       </div>
     </div>
+  </div>
 </template>
 <script>
 import axios from "axios";

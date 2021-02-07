@@ -2,7 +2,7 @@
     <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item me-2">
-                <router-link to="/" class="nav-link active"
+                <router-link to="/" class="nav-link active " style="font-weight:700;"
                   >Ana Sayfa</router-link
                 >
               </li>
