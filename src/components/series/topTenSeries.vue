@@ -16,9 +16,12 @@
         <!-- <p class="text-white">{{ seriesList.overview }}</p> -->
         <div class="film_info">
           <div class="list-icon-left">
-            <i class="fas fa-play"></i>
-            <i class="fas fa-plus"></i>
-            <i class="fas fa-angle-down" style="font-size: 12px !important">
+            <i class="fas fa-play" style="background: white; color: black"> </i>
+            <i class="fas fa-plus toolTip">
+              <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
+            </i>
+            <i class="fas fa-chevron-down toolTip">
+              <span class="toolTiptext-sm tool-span-sm"> Daha fazla bilgi </span>
             </i>
           </div>
         </div>

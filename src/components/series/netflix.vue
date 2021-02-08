@@ -4,7 +4,7 @@
   </div>
 
   <swiper
-    :slides-per-view="5"
+    :slides-per-view="7"
     :space-between="50"
     @swiper="onSwiper"
     @slideChange="onSlideChange"

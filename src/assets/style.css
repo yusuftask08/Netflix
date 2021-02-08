@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif  ;  
+     -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
 /* Movie Backgrounds */
 .nextReleasesContainer {
     width: 100%;
@@ -161,13 +171,7 @@
 
 }
 
-* {
-    font-family: 'Poppins', sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: -moz-none;
-    -o-user-select: none;
-    user-select: none;
-}
+
 
 img {
     -webkit-user-drag: none;
@@ -208,23 +212,23 @@ img {
 .film_info_original_card {
     position: absolute;
     transition: 700ms all;
-    bottom: -10%;
+    bottom: 0;
     display: flex;
     justify-content: center;
     width: 370px;
     height: 50px;
+    opacity: 0;
 }
 
 .originalCard:hover .film_info_original_card {
     bottom: 0%;
-    transition: 700ms all;
     width: 370px;
     height: 80px;
-    background: grey;
+    background: linear-gradient(to top, #000, #0003 70%, #0000);
+    opacity: 1;
 }
 
 .list-icon-left_original i {
-    font-size: 14px !important;
     padding: 20px;
     border: 2px solid #fff !important;
     border-radius: 50%;
@@ -248,11 +252,13 @@ img {
     border: none !important;
     overflow: hidden;
     position: relative;
+    
     /* box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .movie_card:hover {
     transform: scale(1.2);
+
     cursor: pointer;
     border: none;
     transition: 0.7s ease-in-out;
@@ -275,8 +281,8 @@ img {
     border-radius: 50%;
     color: #dbdbdb;
     cursor: pointer;
-    transition: 300ms all;
-    margin-right: 15px !important;
+    transition: transform 300ms all;
+    margin-right: 10px !important;
     margin-top: 5px;
     background-color: #212529;
 }
@@ -302,32 +308,52 @@ img {
     transition: 700ms all;
     width: 200px;
     height: 50px;
+    background: linear-gradient(to top, #000, #0003 70%, #0000);
 
 }
 
 /* ToolTip css */
-.tooltip {
+.toolTip {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
   }
   
-  .tooltip .tooltiptext {
+  .toolTip .toolTiptext {
     visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
+    width: 122px;
+    background-color: #fff;
+    color: black;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 10px 0;
     position: absolute;
-    z-index: 1;
-    bottom: 150%;
+    bottom: 110%;
+    margin-bottom: 5px;
     left: 50%;
     margin-left: -60px;
-  }
-  
-  .tooltip .tooltiptext::after {
+    white-space:nowrap;
+     
+ }
+ .toolTip .toolTiptext-sm {
+    visibility: hidden;
+    width: 85px;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 110%;
+    margin-bottom: 5px;
+    left: 50%;
+    margin-left: -40px;
+    white-space:nowrap;
+ }
+.tool-span {
+    font-size: 15px;
+}
+  .toolTip .toolTiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -335,11 +361,34 @@ img {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: black transparent transparent transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  .toolTip .toolTiptext-sm::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
   }
   
-  .tooltip:hover .tooltiptext {
+
+   .toolTip:hover .toolTiptext {
     visibility: visible;
+    transition: 300ms all;
+    
+  }
+  .toolTip:hover .toolTiptext-sm {
+    visibility: visible;
+    transition: 300ms all;
+    
+  }
+  .tool-span-sm {
+      font-size: 12px;
+      z-index: 1;
+      position: absolute ;
   }
 /* ToolTip css */
 
@@ -404,10 +453,6 @@ img {
     transition: 500ms;
 }
 
-.container-card:focus-within .item,
-.container-card:hover .item {
-    transform: translate(12.5%);
-}
 
 
 .item:hover~.item,
@@ -415,11 +460,7 @@ img {
     transform: translateX(25%);
 }
 
-.container-card .item:focus,
-.container-card .item:hover {
-    transform: scale(1.5);
-    z-index: 1;
-}
+
 
 
 
@@ -427,14 +468,7 @@ img {
 
 /* Card Hover */
 
-.card:hover {
-    transform: scale(1.2);
 
-}
-
-.movie_card:hover+.card {
-    display: block;
-}
 
 
 

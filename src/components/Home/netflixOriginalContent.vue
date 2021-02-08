@@ -13,12 +13,12 @@
         <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
         <div class="film_info_original_card">
           <div class="list-icon-left_original">
-            <i class="fas fa-play"></i>
-            <i class="fas fa-plus"></i>
-            <i class="fas fa-chevron-down">
-              <div class="tooltip">
-                <span class="tooltiptext"> Daha Fazla Bilgi</span>
-              </div>
+            <i class="fas fa-play" style="background:white; color:black;"> </i>
+            <i class="fas fa-plus toolTip">
+              <span class="toolTiptext tool-span"> Listeme ekle </span>
+            </i>
+            <i class="fas fa-chevron-down toolTip">
+              <span class="toolTiptext tool-span"> Daha fazla bilgi </span>
             </i>
           </div>
         </div>
