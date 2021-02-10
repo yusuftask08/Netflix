@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
 
 * {
-    font-family: 'Roboto', sans-serif  ;  
-     -webkit-user-select: none;
+    font-family: 'Roboto', sans-serif;
+    -webkit-user-select: none;
     -moz-user-select: -moz-none;
     -o-user-select: none;
     user-select: none;
 }
+
 /* Movie Backgrounds */
 .nextReleasesContainer {
     width: 100%;
@@ -165,11 +166,6 @@
     margin-top: 60px !important;
 }
 
-.title {
-    font-size: 1.5rem;
-    text-align: center;
-
-}
 
 
 
@@ -197,7 +193,7 @@ img {
 .originalCard img {
     object-fit: fill !important;
     align-items: center;
-    
+
 }
 
 .originalCard:hover {
@@ -205,7 +201,7 @@ img {
     cursor: pointer;
     border: none;
     transition: 0.7s ease-in-out;
-    
+
 
 }
 
@@ -220,13 +216,21 @@ img {
     opacity: 0;
 }
 
+.title {
+    margin-top: 15px;
+    margin-left: -15px;
+}
+
 .originalCard:hover .film_info_original_card {
     bottom: 0%;
     width: 370px;
-    height: 80px;
-    background: linear-gradient(to top, #000, #0003 70%, #0000);
+    height: 135px;
     opacity: 1;
+    background: linear-gradient(to top, #000, #0003 70%, #0000);
 }
+
+
+
 
 .list-icon-left_original i {
     padding: 20px;
@@ -239,11 +243,13 @@ img {
     margin-top: 15px;
     background: transparent;
 
-    
+
 }
+
 .list-icon-left_original i:hover {
     background-color: #212529;
 }
+
 .movie_card {
     padding: 0 !important;
     width: 12rem;
@@ -252,7 +258,7 @@ img {
     border: none !important;
     overflow: hidden;
     position: relative;
-    
+
     /* box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19); */
 }
 
@@ -317,9 +323,9 @@ img {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
-  }
-  
-  .toolTip .toolTiptext {
+}
+
+.toolTip .toolTiptext {
     visibility: hidden;
     width: 122px;
     background-color: #fff;
@@ -332,10 +338,11 @@ img {
     margin-bottom: 5px;
     left: 50%;
     margin-left: -60px;
-    white-space:nowrap;
-     
- }
- .toolTip .toolTiptext-sm {
+    white-space: nowrap;
+
+}
+
+.toolTip .toolTiptext-sm {
     visibility: hidden;
     width: 85px;
     background-color: #fff;
@@ -348,50 +355,123 @@ img {
     margin-bottom: 5px;
     left: 50%;
     margin-left: -40px;
-    white-space:nowrap;
- }
+    white-space: nowrap;
+}
+
 .tool-span {
     font-size: 15px;
 }
-  .toolTip .toolTiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-  }
-  .toolTip .toolTiptext-sm::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-  }
-  
 
-   .toolTip:hover .toolTiptext {
+.toolTip .toolTiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.toolTip .toolTiptext-sm::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+
+.toolTip:hover .toolTiptext {
     visibility: visible;
     transition: 300ms all;
-    
-  }
-  .toolTip:hover .toolTiptext-sm {
+
+}
+
+.toolTip:hover .toolTiptext-sm {
     visibility: visible;
     transition: 300ms all;
-    
-  }
-  .tool-span-sm {
-      font-size: 12px;
-      z-index: 1;
-      position: absolute ;
-  }
+
+}
+
+.tool-span-sm {
+    font-size: 12px;
+    z-index: 1;
+    position: absolute;
+}
+
 /* ToolTip css */
 
+/* Modal css */
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-container {
+    width: 300px;
+    margin: 0px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+    transition: all 0.3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+}
+
+.modal-body {
+    margin: 20px 0;
+}
+
+.modal-default-button {
+    display: block;
+    margin-top: 1rem;
+}
+
+/*
+   * The following styles are auto-applied to elements with
+   * transition="modal" when their visibility is toggled
+   * by Vue.js.
+   *
+   * You can easily play with the modal transition by editing
+   * these styles.
+   */
+
+.modal-enter {
+    opacity: 0;
+}
+
+.modal-leave-active {
+    opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Modal css */
 
 
 

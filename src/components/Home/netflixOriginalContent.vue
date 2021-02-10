@@ -10,19 +10,23 @@
           class="card-img-top"
           alt="..."
         />
-        <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
+
         <div class="film_info_original_card">
           <div class="list-icon-left_original">
-            <i class="fas fa-play" style="background:white; color:black;"> </i>
-            <i class="fas fa-plus toolTip">
+            <i
+              class="fas fa-play right"
+              style="background: white; color: black"
+            >
+            </i>
+            <i class="fas fa-plus toolTip right-2">
               <span class="toolTiptext tool-span"> Listeme ekle </span>
             </i>
             <i class="fas fa-chevron-down toolTip">
               <span class="toolTiptext tool-span"> Daha fazla bilgi </span>
             </i>
+            <h3 class="title text-white">{{ gundemList.original_title }}</h3>
           </div>
         </div>
-        <!-- <p class="text-white"> {{ seriesList.overview }}</p> -->
       </div>
     </div>
   </div>
@@ -39,7 +43,7 @@ export default {
   created() {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&page=1"
+        "https://api.themoviedb.org/3/movie/popular?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&page=1&append_to_response=videos,images"
       )
       .then((response) => {
         console.log("gundemList", response);
