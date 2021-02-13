@@ -2,16 +2,21 @@
   <div class="container">
     <div class="contanier-text">
       <div class="icerik contanier-text-title text-white">
-        <ul>
-          <li style="list-style: none; color:grey;" >İlgili İçeriğe Göz atın : </li>
-          <li
-            style="list-style: none; display: inline"
-            v-for="movie in movieList"
-            :key="movie.imdbID"
-          >
-            | {{ movie.original_title }}
-          </li>
-        </ul>
+        <div v-show="icerik" class="div">
+          <p v-if="icerik" style="list-style: none; color: grey">
+            İlgili İçeriğe göz atın :
+          </p>
+           
+          <ul>
+            <li
+              style="list-style: none; display: inline"
+              v-for="movie in movieList"
+              :key="movie.imdbID"
+            >
+              | <a :href="movie.id"  v-if="icerik = !movie.lenght" style="text-white!" > {{ movie.original_title }}</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -30,6 +35,11 @@ import movieListItem from "@/components/Home/movieListItem";
 // import axios from "axios";
 import { mapGetters } from "vuex";
 export default {
+  data() {
+    return {
+      icerik: false,
+    };
+  },
   components: {
     movieListItem,
   },

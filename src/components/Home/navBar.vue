@@ -8,7 +8,7 @@
       >
         <div class="container-fluid">
           <a
-            href="https://fontmeme.com/netflix-font/"
+            href="/"
             style="margin-right: 20px; margin-left: 60px"
           >
             <img

@@ -7,7 +7,7 @@
         class="form-control me-5"
         v-model="searchKey"
         placeholder="Hadi birşey arayalım.."
-        @keydown.enter="searchMovie(searchKey,searchpage())"
+        @keydown.enter="searchMovie(searchKey, searchpage(),searchopen=false)"
       />
     </div>
     <i
@@ -39,6 +39,7 @@
 // import axios from "axios";
 import { mapActions } from "vuex";
 export default {
+
   data() {
     return {
       searchopen: false,
@@ -50,8 +51,8 @@ export default {
     searchpage() {
       this.$router.push({ name: "Search" });
     },
+    
   },
-  created() {},
 };
 </script>
 

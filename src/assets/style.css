@@ -155,7 +155,7 @@
 }
 
 .row {
-    overflow: hidden;
+    margin-left: -15px;
 }
 
 .text-span {
@@ -278,7 +278,12 @@ img {
 .icerik {
     padding-top: 150px;
 }
-
+.icerik a {
+    color : #fff;   
+}
+.icerik a:hover {
+    color : red;
+}
 .movie_card:hover {
     transform: scale(1.2);
 
