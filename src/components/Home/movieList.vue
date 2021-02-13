@@ -1,10 +1,26 @@
 <template>
-  <div >
-    <div>
-      <div class="container-card" >
-        <div class="imdb ms-5"  v-for="movie in movieList" :key="movie.imdbID">
-          <movieListItem :movie="movie"  />
-        </div>
+  <div class="container">
+    <div class="contanier-text">
+      <div class="icerik contanier-text-title text-white">
+        <ul>
+          <li style="list-style: none; color:grey;" >İlgili İçeriğe Göz atın : </li>
+          <li
+            style="list-style: none; display: inline"
+            v-for="movie in movieList"
+            :key="movie.imdbID"
+          >
+            | {{ movie.original_title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-6 col-sm-2 my-5"
+        v-for="movie in movieList"
+        :key="movie.imdbID"
+      >
+        <movieListItem :movie="movie" />
       </div>
     </div>
   </div>

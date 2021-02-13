@@ -1,4 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import {
+    createRouter,
+    createWebHashHistory
+} from 'vue-router'
 import Home from '../views/Home.vue'
 
 const routes = [{
@@ -11,28 +14,34 @@ const routes = [{
         name: 'MyList',
 
         component: () =>
-            import ( /* webpackChunkName: "about" */ '@/views/MyList.vue')
+            import( /* webpackChunkName: "about" */ '@/views/MyList.vue')
     },
     {
         path: '/Movies',
         name: 'Movies',
 
         component: () =>
-            import ( /* webpackChunkName: "about" */ '@/views/Movies.vue')
+            import( /* webpackChunkName: "about" */ '@/views/Movies.vue')
     },
     {
         path: '/NewAndPopular',
         name: 'NewAndPopular',
 
         component: () =>
-            import ( /* webpackChunkName: "about" */ '@/views/NewAndPopular.vue')
+            import( /* webpackChunkName: "about" */ '@/views/NewAndPopular.vue')
     },
     {
         path: '/Series',
         name: 'Series',
 
         component: () =>
-            import ( /* webpackChunkName: "about" */ '@/views/Series.vue')
+            import( /* webpackChunkName: "about" */ '@/views/Series.vue')
+    }, {
+        path: '/Search',
+        name: 'Search',
+
+        component: () =>
+            import( /* webpackChunkName: "about" */ '@/views/Search.vue')
     },
 ]
 

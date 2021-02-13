@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-fluid flex-row">
+    <nav class="container-fluid flex-row">
       <nav
         class="navbar navbar-expand-xxl navbar-dark navbar-linear"
         :class="{ change_color: windowTop > 50 }"
@@ -20,7 +20,7 @@
           <secondItem />
         </div>
       </nav>
-    </div>
+    </nav>
   </div>
 </template>
 

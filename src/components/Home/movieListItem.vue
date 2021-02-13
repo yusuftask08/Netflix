@@ -1,7 +1,12 @@
 <template>
-  <div class="ms-3 movie_card">
-    <img :src="moviePoster" class="card-img-top" alt="..." />
-    <h3 class="title text-white">{{ movie.Title }}</h3>
+ 
+  <div class="ms-2 search_movie_card">
+    <img
+      :src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+      class="card-img-top"
+      alt="..."
+    />
+    <!-- <h3 class="title text-white">{{ movie.original_title }}</h3> -->
   </div>
 </template>
 <script>
@@ -10,12 +15,6 @@ export default {
     movie: {
       type: Object,
       required: true,
-    },
-  },
-
-  computed: {
-    moviePoster() {
-      return this.movie.Poster != "N/A" ? this.movie.Poster : "./logo.png";
     },
   },
 };

@@ -7,9 +7,8 @@
         class="form-control me-5"
         v-model="searchKey"
         placeholder="Hadi birşey arayalım.."
-        @keydown.enter="searchMovie(searchKey)"
+        @keydown.enter="searchMovie(searchKey,searchpage())"
       />
-
     </div>
     <i
       @click="searchopen = !searchopen"
@@ -48,6 +47,9 @@ export default {
   },
   methods: {
     ...mapActions(["searchMovie"]),
+    searchpage() {
+      this.$router.push({ name: "Search" });
+    },
   },
   created() {},
 };

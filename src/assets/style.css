@@ -262,6 +262,23 @@ img {
     /* box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19); */
 }
 
+.search_movie_card {
+    padding: 0 !important;
+    width: 10rem;
+    margin-top: 10px;
+    top: 0px;
+    border: none !important;
+    overflow: hidden;
+    position: relative;
+
+}
+
+
+
+.icerik {
+    padding-top: 150px;
+}
+
 .movie_card:hover {
     transform: scale(1.2);
 

@@ -3,8 +3,11 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     movies : [],
-    baseURL : "http://www.omdbapi.com",
-    apiKey : "38657152"
+    baseURL : "https://api.themoviedb.org/3/search/multi",
+    apiKey : "7b97ca5600ae944d697e04e778928d05",
+    property : "language=en-US&query=",
+    propert : "page=1&include_adult=True",
+    
   },
   mutations: {
     setMovies (state, pMovies) {
@@ -17,11 +20,11 @@ export default createStore({
   actions: {
     searchMovie({commit, state }, searchKey){
       axios
-      .get(`${state.baseURL}/?apiKey=${state.apiKey}&s=${searchKey}`
+      .get(`${state.baseURL}?api_key=${state.apiKey}&${state.property}${searchKey}&${state.propert}`
       )
       .then((movie_list_response) => {
-        console.log("movie", movie_list_response);
-        commit("setMovies", movie_list_response.data.Search || [] )
+        console.log("SearchList", movie_list_response);
+        commit("setMovies", movie_list_response.data.results || [] )
       });
     }
   },
