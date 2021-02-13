@@ -1,5 +1,15 @@
 <template>
+
     <div>
-        <h3> Filmler - Movies</h3>
+        <footers />
     </div>
 </template>
+<script>
+import footers from '@/components/footer/footers';
+
+export default {
+    components : {
+        footers,
+    }
+}
+</script>

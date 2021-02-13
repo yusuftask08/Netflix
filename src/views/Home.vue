@@ -11,6 +11,7 @@
     <diziler />
     <onerilenBreaking />
     <topTenSeries />
+    <footers  />
   </div>
 </template>
 
@@ -27,6 +28,7 @@ import netflixOriginalContent from '@/components/Home/netflixOriginalContent.vue
 import diziler from '@/components/series/diziler.vue';
 import onerilenBreaking from '@/components/series/onerilenBreaking.vue';
 import topTenSeries from '@/components/series/topTenSeries.vue';
+import footers from '@/components/footer/footers.vue';
 
 
 
@@ -43,6 +45,7 @@ export default {
     diziler,
     onerilenBreaking,
     topTenSeries,
+    footers
   },
 };
 </script>
