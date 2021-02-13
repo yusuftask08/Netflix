@@ -1,7 +1,6 @@
 <template>
   <div>
     <backgroundMovie />
-    <movieList />
     <sliderHome />
     <sliderHomeTwo />
     <sliderHomeThree />
