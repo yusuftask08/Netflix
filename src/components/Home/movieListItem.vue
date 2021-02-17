@@ -24,7 +24,7 @@
                 <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
               </i></a
             >
-            <a @click="showDetail(movie.id)">
+            <a @click="isOpen = !isOpen">
               <i class="fas fa-chevron-down toolTip">
                 <span class="toolTiptext-sm tool-span-sm">
                   Daha fazla bilgi
@@ -59,12 +59,7 @@ export default {
         film: [],
       };
     },
-    methods: {
-      showDetail(id) {
-        movie.id = this.film;
-        console.log("calıstıid" , id);
-      }
-    },
+
   },
 };
 </script>
