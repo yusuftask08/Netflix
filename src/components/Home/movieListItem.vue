@@ -1,13 +1,14 @@
 <template >
   <div class="container-card">
     <div class="">
-      <modals :movies="movie" v-model="isOpen"  />
+      <modals :movie="movie" v-model="isOpen" />
       <div class="ms-2 me-2 movie_card item">
         <img
           :src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
           class="card-img-top"
           alt="..."
         />
+        <p>{{ movie.imdb_id }}</p>
 
         <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
         <!-- <p class="text-white">{{ seriesList.vote_count }}</p> -->
@@ -49,17 +50,26 @@ export default {
       type: Object,
       required: true,
     },
-    isOpen: {
-      type: Boolean,
-      required: true,
-    },
-    data() {
-      return {
-        
-        film: [],
-      };
-    },
+  },
+  // methods: {
+  //   showDetail(id) {
+  //     console.log("movies", id);
+  //     axios
+  //       .get(
+  //         `https://api.themoviedb.org/3/movie/${id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US`
+  //       )
+  //       .then((response) => {
+  //         console.log("istekat", response);
+  //         this.movies = response.data.results;
+  //       });
+  //   },
+  // },
 
+  data() {
+    return {
+      isOpen: false,
+      movies: [],
+    };
   },
 };
 </script>

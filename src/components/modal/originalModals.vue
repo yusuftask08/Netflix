@@ -1,4 +1,4 @@
-<template v-for="movie in movie" :key="movie.id">
+<template  v-for="gundemList in gundemList" :key="gundemList.id">
   <Modal modal-transition="slide-down">
     <template #default="{ close }">
       <div class="modal-container">
@@ -6,13 +6,15 @@
           <div class="img-modal">
             <i @click="close" class="far fa-times-circle close-icon"></i>
             <img
-              :src="'http://image.tmdb.org/t/p/w500/' + movie.backdrop_path"
+              :src="
+                'http://image.tmdb.org/t/p/w500/' + gundemList.backdrop_path
+              "
               class="card-img-top"
               alt="..."
             />
             <div class="modal-title">
-              <h1 class="text-white">{{ movie.original_title }}</h1>
-              <h1 class="text-white">{{ movie.original_name }}</h1>
+              <h1 class="text-white">{{ gundemList.original_title }}</h1>
+              <h1 class="text-white">{{ gundemList.original_name }}</h1>
             </div>
             <div class="btn-modal">
               <button
@@ -21,7 +23,6 @@
                 style="width: 150px; height: 50px; font-size: 20px"
               >
                 <i class="fas fa-play"></i>
-
                 <span>Oynat</span>
               </button>
               <div class="list-icon-left-modal">
@@ -38,7 +39,6 @@
                     <b>Listeme ekle</b>
                   </span>
                 </i>
-
                 <i class="far fa-thumbs-up toolTip">
                   <span
                     class="toolTiptext tool-span"
@@ -69,21 +69,23 @@
             </div>
           </div>
           <div class="detail-container">
-            <div class="row" style="margin-left:0px!important;">
+            <div class="row">
               <div class="col-sm">
                 <div class="puan">
-                  <span class="Pborder">{{ movie.vote_average }}</span>
+                  <span class="Pborder">{{ gundemList.vote_average }}</span>
                 </div>
               </div>
               <div class="col-sm">One of three columns</div>
             </div>
             <div class="title-modal">
-              <h3 class="title text-white">{{ movie.release_dates }}</h3>
-              <p class="text-white">{{ movie.overview }}</p>
-              <p class="text-white">{{ movie.overview }}</p>
-              <p class="text-white">{{ movie.overview }}</p>
-              <p class="text-white">{{ movie.overview }}</p>
-              <p class="text-white">{{ movie.overview }}</p>
+              <h3 class="title text-white">{{ gundemList.release_dates }}</h3>
+              <p class="text-white">{{ gundemList.overview }}</p>
+              <p class="text-white">{{ gundemList.overview }}</p>
+              <p class="text-white">{{ gundemList.overview }}</p>
+              <p class="text-white">{{ gundemList.overview }}</p>
+              <p class="text-white">{{ gundemList.overview }}</p>
+              <p class="text-white">{{ gundemList.overview }}</p>
+              <p class="text-white">{{ gundemList.overview }}</p>
             </div>
           </div>
         </div>
@@ -91,18 +93,19 @@
     </template>
   </Modal>
 </template>
- 
-  <script>
+<script>
 import { Modal } from "vue-neat-modal";
 
 export default {
   components: { Modal },
+
   props: {
-    movie: {
+    gundemList: {
       type: Object,
       required: true,
     },
   },
+
   data() {
     return {
       modalTransition: "scale",
@@ -113,6 +116,7 @@ export default {
   //   moviesPoster() {
   //     return this.movies.backdrop_path !== "Null"
   //   },
+
   // },
 };
 </script> 
@@ -121,10 +125,8 @@ export default {
 .puan {
   width: 30px;
 }
-
 .detail-container {
   padding: 0 3em;
-  text-align: center;
 }
 .Pborder {
   border: solid 1px rgba(255, 255, 255, 0.4);
