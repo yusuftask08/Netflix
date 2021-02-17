@@ -166,9 +166,6 @@
     margin-top: 60px !important;
 }
 
-
-
-
 img {
     -webkit-user-drag: none;
     -moz-user-drag: none;
@@ -201,19 +198,15 @@ img {
     cursor: pointer;
     border: none;
     transition: 0.7s ease-in-out;
-
-
 }
 
 .film_info_original_card {
     position: absolute;
-    transition: 700ms all;
-    bottom: 0;
     display: flex;
     justify-content: center;
     width: 370px;
     height: 50px;
-    opacity: 0;
+    opacity: -1;
 }
 
 .title {
@@ -225,12 +218,10 @@ img {
     bottom: 0%;
     width: 370px;
     height: 135px;
+    transition: 700ms all;
     opacity: 1;
     background: linear-gradient(to top, #000, #0003 70%, #0000);
 }
-
-
-
 
 .list-icon-left_original i {
     padding: 20px;
@@ -242,8 +233,6 @@ img {
     margin-right: 35px !important;
     margin-top: 15px;
     background: transparent;
-
-
 }
 
 .list-icon-left_original i:hover {
@@ -278,12 +267,15 @@ img {
 .icerik {
     padding-top: 150px;
 }
+
 .icerik a {
-    color : #fff;   
+    color: #fff;
 }
+
 .icerik a:hover {
-    color : red;
+    color: red;
 }
+
 .movie_card:hover {
     transform: scale(1.2);
 
@@ -291,9 +283,6 @@ img {
     border: none;
     transition: 0.7s ease-in-out;
 }
-
-
-
 
 .movie_card img {
     height: 100%;
@@ -427,77 +416,6 @@ img {
 
 /* ToolTip css */
 
-/* Modal css */
-.modal-mask {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: table;
-    transition: opacity 0.3s ease;
-}
-
-.modal-wrapper {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.modal-container {
-    width: 300px;
-    margin: 0px auto;
-    padding: 20px 30px;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-    transition: all 0.3s ease;
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-.modal-header h3 {
-    margin-top: 0;
-    color: #42b983;
-}
-
-.modal-body {
-    margin: 20px 0;
-}
-
-.modal-default-button {
-    display: block;
-    margin-top: 1rem;
-}
-
-/*
-   * The following styles are auto-applied to elements with
-   * transition="modal" when their visibility is toggled
-   * by Vue.js.
-   *
-   * You can easily play with the modal transition by editing
-   * these styles.
-   */
-
-.modal-enter {
-    opacity: 0;
-}
-
-.modal-leave-active {
-    opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-/* Modal css */
-
-
-
-
 .play_button {
     background-color: #E50914;
     position: absolute;
@@ -515,9 +433,6 @@ img {
 
 
 /* Card sss */
-
-
-
 
 .container-fluid {
     margin: 0px ! important;
@@ -561,20 +476,3 @@ img {
 .item:focus~.item {
     transform: translateX(25%);
 }
-
-
-
-
-
-
-
-/* Card Hover */
-
-
-
-
-
-
-/* Card Hover */
-
-/* Card Hover */

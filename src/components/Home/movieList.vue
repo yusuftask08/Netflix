@@ -6,14 +6,22 @@
           <p v-if="icerik" style="list-style: none; color: grey">
             İlgili İçeriğe göz atın :
           </p>
-           
+
           <ul>
             <li
               style="list-style: none; display: inline"
               v-for="movie in movieList"
-              :key="movie.imdbID"
+              :key="movie.id"
             >
-              | <a :href="movie.id"  v-if="icerik = !movie.lenght" style="text-white!" > {{ movie.original_title }}</a>
+              |
+              <a
+                @click="isOpen = !isOpen"
+                :href="movie.id"
+                v-if="(icerik = !movie.lenght)"
+                style="text-white!"
+              >
+                {{ movie.original_title }}</a
+              >
             </li>
           </ul>
         </div>
@@ -23,9 +31,10 @@
       <div
         class="col-6 col-sm-2 my-5"
         v-for="movie in movieList"
-        :key="movie.imdbID"
+        :key="movie.id"
       >
-        <movieListItem :movie="movie" />
+        <modals v-model="isOpen" />
+        <movieListItem :isOpen="isOpen" :movie="movie" />
       </div>
     </div>
   </div>
@@ -38,6 +47,7 @@ export default {
   data() {
     return {
       icerik: false,
+      isOpen: false,
     };
   },
   components: {
@@ -51,3 +61,8 @@ export default {
   },
 };
 </script>
+<style>
+ul li a {
+  margin-right:3px;
+}
+</style>

@@ -1,8 +1,9 @@
 <template>
+  <miniModalDetail v-model="isOpen" />
   <div class="text-span">
     <span> Günün Popüler Dizileri </span>
   </div>
-  <div class="container-card">
+  <div class="container-card" @mouseover="isOpen = !isOpen">
     <div class="" v-for="seriesList in seriesList" :key="seriesList.id">
       <div class="ms-2 me-2 movie_card item">
         <img
@@ -21,7 +22,9 @@
               <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
             </i>
             <i class="fas fa-chevron-down toolTip">
-              <span class="toolTiptext-sm tool-span-sm"> Daha fazla bilgi </span>
+              <span class="toolTiptext-sm tool-span-sm">
+                Daha fazla bilgi
+              </span>
             </i>
           </div>
         </div>
@@ -36,6 +39,7 @@ export default {
   data() {
     return {
       seriesList: [],
+      isOpen: false,
     };
   },
   created() {
