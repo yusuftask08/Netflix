@@ -1,15 +1,19 @@
 <template v-for="movie in movie" :key="movie.id">
-  <Modal modal-transition="slide-down">
+  <Modal modal-transition="scale">
     <template #default="{ close }">
       <div class="modal-container">
         <div class="card">
           <div class="img-modal">
             <i @click="close" class="far fa-times-circle close-icon"></i>
-            <img
-              :src="'http://image.tmdb.org/t/p/w500/' + movie.backdrop_path"
-              class="card-img-top"
-              alt="..."
-            />
+
+            <div class="images-modal">
+              <img
+                :src="'http://image.tmdb.org/t/p/w500/' + movie.backdrop_path"
+                class="card-img-top img-gradient"
+                alt="..."
+                style="position: relative"
+              />
+            </div>
             <div class="modal-title">
               <h1 class="text-white">{{ movie.original_title }}</h1>
               <h1 class="text-white">{{ movie.original_name }}</h1>
@@ -69,7 +73,7 @@
             </div>
           </div>
           <div class="detail-container">
-            <div class="row" style="margin-left:0px!important;">
+            <div class="row" style="margin-left: 0px !important">
               <div class="col-sm">
                 <div class="puan">
                   <span class="Pborder">{{ movie.vote_average }}</span>
@@ -125,6 +129,7 @@ export default {
 .detail-container {
   padding: 0 3em;
   text-align: center;
+  background: #181818;
 }
 .Pborder {
   border: solid 1px rgba(255, 255, 255, 0.4);
@@ -146,6 +151,7 @@ export default {
   font-size: 20px;
   justify-content: center;
 }
+
 .title-modal {
   margin-left: 15px;
 }
@@ -221,7 +227,6 @@ export default {
   transform: translateX(0px) translateY(calc(24px + 2em)) scaleX(1) scaleY(1)
     translateZ(0px);
   color: #fff;
-  background-color: transparent;
   font-size: 16px;
   z-index: 2;
   height: 800px;
@@ -241,8 +246,34 @@ export default {
   position: relative;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  background-color: linear-gradient(to bottom, #000, #0003 70%, #0000);
   height: 440px;
+  opacity: 1;
+}
+.images-modal {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.images-modal:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 55%;
+  bottom: 0;
+  background: -webkit-linear-gradient(to top, #181818, transparent 50%);
+  background: linear-gradient(to top, #181818, transparent 50%);
+}
+
+.images-modal img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: relative;
+}
+.images-bla {
+  position: relative;
 }
 .card h1 {
   margin-top: 0;

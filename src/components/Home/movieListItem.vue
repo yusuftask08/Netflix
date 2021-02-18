@@ -8,7 +8,7 @@
           class="card-img-top"
           alt="..."
         />
-        <p>{{ movie.imdb_id }}</p>
+     
 
         <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
         <!-- <p class="text-white">{{ seriesList.vote_count }}</p> -->
@@ -40,10 +40,10 @@
 </template>
 <script>
 import axios from "axios";
-import { Modal } from "vue-neat-modal";
+import modals from "@/components/modal/modals";
 
 export default {
-  components: { Modal },
+  components: { modals },
 
   props: {
     movie: {

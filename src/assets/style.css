@@ -128,7 +128,7 @@
     /* background-color: linear-gradient(to bottom, rgba(167, 167, 167, 0.13), rgba(0, 0, 0, 0.486)); */
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 4;
     margin-top: 0 !important;
     background: linear-gradient(to bottom, #000, #0003 70%, #0000);
     transition: background .5s;
@@ -277,11 +277,15 @@ img {
 }
 
 .movie_card:hover {
-    transform: scale(1.2);
-
+    z-index: 3;
     cursor: pointer;
     border: none;
     transition: 0.7s ease-in-out;
+}
+
+.swiper-container {
+    height: 400px !important;
+    padding-top: 20px !important;
 }
 
 .movie_card img {
@@ -476,3 +480,7 @@ img {
 .item:focus~.item {
     transform: translateX(25%);
 }
+
+
+
+/* yedek */

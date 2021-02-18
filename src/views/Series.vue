@@ -7,7 +7,6 @@
     <onerilenDiziler />
     <onerilenBreaking />
     <netflix />
-    <deneme />
     <footers />
   </div>
 </template>
@@ -19,7 +18,6 @@ import topTenSeries from "@/components/series/topTenSeries";
 import onerilenDiziler from "@/components/series/onerilenDiziler";
 import onerilenBreaking from "@/components/series/onerilenBreaking";
 import netflix from "@/components/series/netflix";
-import deneme from "@/components/series/deneme";
 import footers from "@/components/footer/footers.vue";
 
 export default {
@@ -31,7 +29,6 @@ export default {
     onerilenDiziler,
     onerilenBreaking,
     netflix,
-    deneme,
     footers,
   },
 };

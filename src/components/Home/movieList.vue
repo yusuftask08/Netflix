@@ -40,6 +40,8 @@
 </template>
 <script>
 import movieListItem from "@/components/Home/movieListItem";
+import modals from "@/components/modal/modals";
+
 import axios from "axios";
 import { mapGetters } from "vuex";
 export default {
@@ -48,11 +50,12 @@ export default {
       icerik: false,
       isOpen: false,
       movie: [],
-      filmId: [],
+      
     };
   },
   components: {
     movieListItem,
+    modals
   },
 
   // methods: {
@@ -72,6 +75,7 @@ export default {
   computed: {
     ...mapGetters({
       movieList: "movieItemList",
+      
     }),
   },
 };

@@ -16,16 +16,24 @@
     class="item ms-5"
   >
     <swiper-slide v-for="seriesList in seriesList" :key="seriesList.id">
-      <div 
-      class="ms-2 me-2 movie_card item">
+      <div class="ms-2 me-2 movie_card item">
         <img
           :src="'http://image.tmdb.org/t/p/w500/' + seriesList.poster_path"
-          class="card-img-top cover"
+          class="card-img-top"
           alt="..."
         />
-        <div class="list-icon-left text">
-          <i class="fas fa-play"></i>
-          <i class="fas fa-plus"></i>
+        <div class="film_info">
+          <div class="list-icon-left">
+            <i class="fas fa-play" style="background: white; color: black"> </i>
+            <i class="fas fa-plus toolTip">
+              <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
+            </i>
+            <i class="fas fa-chevron-down toolTip">
+              <span class="toolTiptext-sm tool-span-sm">
+                Daha fazla bilgi
+              </span>
+            </i>
+          </div>
         </div>
       </div>
     </swiper-slide>
