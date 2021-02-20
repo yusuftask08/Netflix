@@ -7,6 +7,7 @@
     <div class="imdb" v-for="gundem in gundemList" :key="gundem.id">
       <div class="ms-3 originalCard">
         <img
+          
           :src="'http://image.tmdb.org/t/p/w500/' + gundem.poster_path"
           class="card-img-top"
           alt="..."
@@ -32,7 +33,12 @@
       </div>
     </div>
   </div>
-  <modals :modalData="modalData" :modalId="modalId" v-model="isOpen" />
+  <modals
+    :modalData="modalData"
+    :modalId="modalId"
+    :videoId="videoId"
+    v-model="isOpen"
+  />
 </template>
 
 <script>
@@ -50,30 +56,36 @@ export default {
       gundemList: [],
       isOpen: false,
       modalData: null,
-      modalId: [],
+      modalId: null,
+      videoId: [],
+      showLoading: true,
     };
   },
   methods: {
     async showDetail(gundem) {
-      console.log("gundem", gundem);
-      this.isOpen = true;
-      this.modalData = gundem;
+      console.log('isOpenACILIYORMU :>> ', this.isOpen);
+      this.showLoading = true;
+      try {
+        await axios
+          .get(
+            `https://api.themoviedb.org/3/movie/${gundem.id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&append_to_response=videos,credits,release_dates,similar`
+          )
+          .then((response) => {
+            console.log("iddetailvideos", response);
+            this.modalId = response.data;
+            this.modalData = gundem;
+          });
 
-      await axios
-        .get(
-          `https://api.themoviedb.org/3/movie/${gundem.id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&append_to_response=videos,credits,release_dates,similar`
-        )
-        .then((response) => {
-          console.log("iddetailvideos", response);
-          this.modalId = response.data;
-        });
-      // await axios
-      //   .get(
-      //       "https://www.googleapis.com/youtube/v3/watch?part=snippet&key=AIzaSyBuYE0tFSCEddNAZ5Mnjy_GTyjqvxFjidgq=sfM7_JLk-84&type=video&maxResults=1"
-      //   )
-      //   .then((response) => {
-      //     console.log("youtubeistegiatıldı", response);
-      //   });
+        console.log("gundem", gundem);
+        this.isOpen = true;
+
+        this.videoId = this.modalId.videos.results;
+        console.log("this.videoId :>> ", this.videoId);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.showLoading = false;
+      }
     },
   },
   created() {

@@ -29,7 +29,6 @@ import onerilenBreaking from "@/components/series/onerilenBreaking.vue";
 import topTenSeries from "@/components/series/topTenSeries.vue";
 import footers from "@/components/footer/footers.vue";
 
-
 export default {
   components: {
     backgroundMovie,
@@ -45,7 +44,6 @@ export default {
     topTenSeries,
     footers,
   },
-  
 };
 </script>
 

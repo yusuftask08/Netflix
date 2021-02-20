@@ -7,24 +7,31 @@
             <i @click="close" class="far fa-times-circle close-icon"></i>
 
             <div class="images-modal">
-              <img
-                :src="
-                  'http://image.tmdb.org/t/p/w500/' + modalData.backdrop_path
-                "
-                class="card-img-top img-gradient"
-                alt="..."
-                style="position: relative"
-              />
-
-              <YouTube v-for="item in modalId.videos.results[0].key" :key="item.id"
-                :src="
-                  'www.youtube.com/watch?v=' + item
-                "
-                @ready="onReady"
-                ref="youtube"
-              />
-
-              <div class="d"></div>
+              <div class="youtube-container">
+                <YoutubeVue3
+                  ref="youtube"
+                  :videoid="videoId[0].key"
+                  :width="850"
+                  :height="440"
+                  :mute="true"
+                  :loop="loop"
+                />
+              </div>
+              <div
+                class="img-show images-modal-show"
+                @mouseover="showImage"
+                @mouseleave="!showImage"
+              >
+                <img
+                  v-if="show"
+                  :src="
+                    'http://image.tmdb.org/t/p/w500/' + modalData.backdrop_path
+                  "
+                  class="card-img-top img-gradient"
+                  alt="..."
+                  style="position: relative"
+                />
+              </div>
             </div>
             <div class="modal-title">
               <h1 class="text-white">{{ modalData.original_title }}</h1>
@@ -101,7 +108,6 @@
 
                 <div class="tagline">
                   <span> {{ modalId.tagline }} </span>
-                
                 </div>
               </div>
               <div class="col-sm">
@@ -201,15 +207,13 @@
   <script>
 import { Modal } from "vue-neat-modal";
 import diziler from "@/components/series/diziler";
-import { defineComponent } from "vue";
-import YouTube from "vue3-youtube";
-import axios from "axios";
+import { YoutubeVue3 } from "youtube-vue3";
+
 export default {
   components: {
     Modal,
     diziler,
-    YouTube,
-    defineComponent,
+    YoutubeVue3,
   },
   props: {
     modalData: {
@@ -220,23 +224,70 @@ export default {
       type: Object,
       required: true,
     },
+    videoId: {
+      type: Object,
+      required: true,
+    },
   },
   data() {
     return {
       modalTransition: "scale",
       isOpen: false,
-      titleTrailer: null,
+      loop: 1,
+      show: true,
     };
   },
   methods: {
-    onReady() {
-      this.$refs.youtube.playVideo();
+    applyConfig() {
+      this.play = Object.assign(this.play, this.temp);
+    },
+    playCurrentVideo() {
+      this.$refs.youtube.player.playVideo();
+    },
+    stopCurrentVideo() {
+      this.$refs.youtube.player.stopVideo();
+    },
+    pauseCurrentVideo() {
+      this.$refs.youtube.player.pauseVideo();
+    },
+    muteCurrentVideo() {
+      this.$refs.youtube.player.muteVideo();
+    },
+    showImage() {
+      this.show = false;
     },
   },
 };
 </script> 
 
 <style>
+.images-modal-show {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.img-show {
+  transition: 2000ms all;
+  position: relative;
+}
+.youtube-container {
+  background: #1414147e;
+  position: fixed;
+  height: 435px;
+}
+.imagesopacity {
+  opacity: 0;
+  transition: 300ms all;
+}
+.youtubeVideo {
+  position: relative;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 435px;
+  opacity: 0.5;
+  background: #1414147e;
+}
 .date-mini-modal {
   position: absolute;
   bottom: 0;

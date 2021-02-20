@@ -12,15 +12,16 @@ import 'vue-neat-modal/dist/vue-neat-modal.css'
 import {
     Modal
 } from 'vue-neat-modal'
-import Vue from 'vue'
-import YouTube from 'vue3-youtube'
 
+
+
+import VueYouTubeIframe from '@techassi/vue-youtube-iframe';
 
 const app = createApp(App);
 app.use(store);
 app.use(router);
+app.use(VueYouTubeIframe);
 app.component("modals", modals);
-app.component('YouTube', YouTube)
 app.component("miniModalDetail", miniModalDetail);
 app.component('AppModal', Modal);
 app.mount("#app");
