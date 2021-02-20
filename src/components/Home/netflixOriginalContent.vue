@@ -32,31 +32,48 @@
       </div>
     </div>
   </div>
-  <originalModals :modalData="modalData" v-model="isOpen" />
+  <modals :modalData="modalData" :modalId="modalId" v-model="isOpen" />
 </template>
 
 <script>
 import axios from "axios";
-import originalModals from "@/components/modal/originalModals";
+import modals from "@/components/modal/modals";
 import { Modal } from "vue-neat-modal";
 
 export default {
   components: {
-    originalModals,
+    modals,
     Modal,
   },
   data() {
     return {
       gundemList: [],
       isOpen: false,
-      modalData : null,
+      modalData: null,
+      modalId: [],
     };
   },
   methods: {
-    showDetail(gundem) {
+    async showDetail(gundem) {
       console.log("gundem", gundem);
       this.isOpen = true;
       this.modalData = gundem;
+
+      await axios
+        .get(
+          `https://api.themoviedb.org/3/movie/${gundem.id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&append_to_response=videos,credits,release_dates,similar`
+        )
+        .then((response) => {
+          console.log("iddetailvideos", response);
+          this.modalId = response.data;
+        });
+      // await axios
+      //   .get(
+      //       "https://www.googleapis.com/youtube/v3/watch?part=snippet&key=AIzaSyBuYE0tFSCEddNAZ5Mnjy_GTyjqvxFjidgq=sfM7_JLk-84&type=video&maxResults=1"
+      //   )
+      //   .then((response) => {
+      //     console.log("youtubeistegiatıldı", response);
+      //   });
     },
   },
   created() {

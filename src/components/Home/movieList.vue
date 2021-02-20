@@ -17,7 +17,7 @@
                 :key="movie.id"
               >
                 |
-                <a v-if="(icerik = !movie.lenght)" @click="isOpen = !isOpen">
+                <a v-if="(icerik = !movie.lenght)" @click="showDetail(movie)">
                   {{ movie.original_title }}
                 </a>
               </li>
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <modals :movie="movie" v-model="isOpen" />
+    <modals :modalData="modalData" v-model="isOpen" />
     <div class="row">
       <div
         class="col-6 col-sm-2 my-5"
@@ -50,14 +50,20 @@ export default {
       icerik: false,
       isOpen: false,
       movie: [],
-      
+      modalData: [],
     };
   },
   components: {
     movieListItem,
-    modals
+    modals,
   },
-
+  methods: {
+    showDetail(movie) {
+      console.log("movieisimidcek :>> ", movie);
+      this.modalData = movie;
+      this.isOpen = !this.isOpen;
+    },
+  },
   // methods: {
   //   showDetail(id) {
   //     console.log("movies", id);
@@ -75,7 +81,6 @@ export default {
   computed: {
     ...mapGetters({
       movieList: "movieItemList",
-      
     }),
   },
 };

@@ -1,18 +1,12 @@
 <template >
   <div class="container-card">
     <div class="">
-      <modals :movie="movie" v-model="isOpen" />
       <div class="ms-2 me-2 movie_card item">
         <img
           :src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
           class="card-img-top"
           alt="..."
         />
-     
-
-        <!-- <h3 class="title text-white">{{ seriesList.original_title }}</h3> -->
-        <!-- <p class="text-white">{{ seriesList.vote_count }}</p> -->
-        <!-- <p class="text-white">{{ seriesList.overview }}</p> -->
         <div class="film_info">
           <div class="list-icon-left">
             <a
@@ -25,7 +19,7 @@
                 <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
               </i></a
             >
-            <a @click="isOpen = !isOpen">
+            <a @click="showDetail(movie)">
               <i class="fas fa-chevron-down toolTip">
                 <span class="toolTiptext-sm tool-span-sm">
                   Daha fazla bilgi
@@ -35,6 +29,7 @@
           </div>
         </div>
       </div>
+      <modals :modalData="modalData" v-model="isOpen" />
     </div>
   </div>
 </template>
@@ -49,6 +44,20 @@ export default {
     movie: {
       type: Object,
       required: true,
+      isOpen: false,
+    },
+  },
+  data() {
+    return {
+      isOpen: false,
+      modalData: [],
+    };
+  },
+  methods: {
+    showDetail(movie) {
+      console.log("movieidcek  ", movie);
+      this.modalData = movie;
+      this.isOpen = !this.isOpen;
     },
   },
   // methods: {
@@ -64,12 +73,5 @@ export default {
   //       });
   //   },
   // },
-
-  data() {
-    return {
-      isOpen: false,
-      movies: [],
-    };
-  },
 };
 </script>

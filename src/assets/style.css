@@ -332,6 +332,9 @@ img {
     background: linear-gradient(to top, #000, #0003 70%, #0000);
 
 }
+.vue-neat-modal-wrapper {
+    z-index: 999 !important;
+}
 
 /* ToolTip css */
 .toolTip {

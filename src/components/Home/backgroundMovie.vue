@@ -38,3 +38,15 @@ export default {
   },
 };
 </script>
+<style>
+.videoContainer:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 55%;
+  bottom: 0;
+  background: -webkit-linear-gradient(to top, #181818, transparent 50%);
+  background: linear-gradient(to top, #181818, transparent 50%);
+}
+</style>

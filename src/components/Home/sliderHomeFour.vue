@@ -1,5 +1,4 @@
 <template>
-  <div class="scrollbar">
     <div class="text-span">
       <span> Yeni Çıkanlar </span>
     </div>
@@ -18,7 +17,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 <script>
 import axios from "axios";
