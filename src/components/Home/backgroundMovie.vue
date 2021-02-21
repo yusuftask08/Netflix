@@ -2,15 +2,14 @@
   <div>
     <div class="nextReleasesContainer">
       <div class="videoContainer">
-        <video autoplay muted loop src="@/assets/video.mp4"></video>
+        <video autoplay muted loop src="@/assets/lucy.mp4"></video>
       </div>
 
       <div class="containerReleases">
-        <h1>Inside Bill's Brain: Decoding Bill Gataes</h1>
-        <p>
-          Bill Gates gelişmekte olan dünyaya daha iyi sıhhi tesisat
-          sağlamayıamaçlayan ölüm kalım görevi hakkında konuşuyor. Gates'in kız
-          kardeşleri çocukluk anılarını paylaşıyor.
+        <h1>L U C Y</h1>
+        <p style="font-size:24px !important;">
+          Uyuşturucu kaçakçılığının onu bir tür süper kahramana dönüştüreceğini
+          kim tahmin edebilirdi ki?
         </p>
         <button id="buttonPlay">
           <i class="fas fa-play"></i>

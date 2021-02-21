@@ -15,7 +15,6 @@
     :autoScrollOffset="0"
     :draggable="false"
     :mousewheel="false"
-    navigation
     class="item ms-5 swiper-scrollbar-lock"
   >
     <swiper-slide

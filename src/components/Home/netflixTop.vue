@@ -72,11 +72,7 @@ export default {
       n: 1,
     };
   },
-  methods: {
-    randomNumber: function () {
-      return Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-    },
-  },
+
 //   created() {
 //     axios
 //       .get(

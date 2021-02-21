@@ -29,7 +29,12 @@
           </div>
         </div>
       </div>
-      <modals :modalData="modalData" v-model="isOpen" />
+      <modals
+        :modalData="modalData"
+        :modalId="modalId"
+        :videoId="videoId"
+        v-model="isOpen"
+      />
     </div>
   </div>
 </template>
@@ -51,27 +56,37 @@ export default {
     return {
       isOpen: false,
       modalData: [],
+      modalData: [],
+      modalId: null,
+      videoId: [],
+      showLoading: true,
     };
   },
   methods: {
-    showDetail(movie) {
-      console.log("movieidcek  ", movie);
-      this.modalData = movie;
-      this.isOpen = !this.isOpen;
+    async showDetail(movie) {
+      this.showLoading = true;
+      try {
+        await axios
+          .get(
+            `https://api.themoviedb.org/3/movie/${movie.id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&append_to_response=videos,credits,release_dates,similar`
+          )
+          .then((response) => {
+            console.log("iddetailvideos", response);
+            this.modalId = response.data;
+            this.modalData = movie;
+          });
+
+        console.log("movie", movie);
+        this.isOpen = true;
+
+        this.videoId = this.modalId.videos.results;
+        console.log("this.videoId :>> ", this.videoId);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.showLoading = false;
+      }
     },
   },
-  // methods: {
-  //   showDetail(id) {
-  //     console.log("movies", id);
-  //     axios
-  //       .get(
-  //         `https://api.themoviedb.org/3/movie/${id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US`
-  //       )
-  //       .then((response) => {
-  //         console.log("istekat", response);
-  //         this.movies = response.data.results;
-  //       });
-  //   },
-  // },
 };
 </script>

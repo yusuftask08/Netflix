@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <modals :modalData="modalData" v-model="isOpen" />
+    <modals :modalData="modalData" v-model="isOpen" :videoId="videoId" :modalId="modalId" />
     <div class="row">
       <div
         class="col-6 col-sm-2 my-5"
@@ -51,6 +51,9 @@ export default {
       isOpen: false,
       movie: [],
       modalData: [],
+      modalId: null,
+      videoId: [],
+      showLoading: true,
     };
   },
   components: {
@@ -58,25 +61,35 @@ export default {
     modals,
   },
   methods: {
-    showDetail(movie) {
-      console.log("movieisimidcek :>> ", movie);
-      this.modalData = movie;
-      this.isOpen = !this.isOpen;
+    async showDetail(movie) {
+      this.showLoading = true;
+      try {
+        await axios
+          .get(
+            `https://api.themoviedb.org/3/movie/${movie.id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&append_to_response=videos,credits,release_dates,similar`
+          )
+          .then((response) => {
+            console.log("iddetailvideos", response);
+            this.modalId = response.data;
+            this.modalData = movie;
+          });
+
+        console.log("movie", movie);
+        this.isOpen = true;
+
+        this.videoId = this.modalId.videos.results;
+        console.log("this.videoId :>> ", this.videoId);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.showLoading = false;
+      }
     },
   },
-  // methods: {
-  //   showDetail(id) {
-  //     console.log("movies", id);
-  //     axios
-  //       .get(
-  //         `https://api.themoviedb.org/3/movie/${id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US`
-  //       )
-  //       .then((response) => {
-  //         console.log("istekat", response);
-  //         this.filmId = response.data.results
-  //       });
-  //   },
-  // },
+
+  // console.log("movieisimidcek :>> ", movie);
+  // this.modalData = movie;
+  // this.isOpen = !this.isOpen;
 
   computed: {
     ...mapGetters({

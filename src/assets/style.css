@@ -222,7 +222,9 @@ img {
     opacity: 1;
     background: linear-gradient(to top, #000, #0003 70%, #0000);
 }
-
+.swiper-container-pointer-events {
+    touch-action: none !important;
+}
 .list-icon-left_original i {
     padding: 20px;
     border: 2px solid #fff !important;
@@ -312,6 +314,11 @@ img {
     justify-content: center;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+    top: 45% !important;
+}
+
 .film_info {
     position: absolute;
     transition: 700ms all;
@@ -332,6 +339,7 @@ img {
     background: linear-gradient(to top, #000, #0003 70%, #0000);
 
 }
+
 .vue-neat-modal-wrapper {
     z-index: 999 !important;
 }

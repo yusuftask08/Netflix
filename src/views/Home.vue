@@ -1,6 +1,7 @@
 <template>
   <div>
     <backgroundMovie />
+    <myList />
     <sliderHome />
     <sliderHomeTwo />
     <sliderHomeThree />
@@ -18,6 +19,7 @@
 <script>
 import backgroundMovie from "@/components/Home/backgroundMovie";
 import movieList from "@/components/Home/movieList";
+import myList from "@/components/series/myList";
 import sliderHome from "@/components/Home/sliderHome";
 import sliderHomeTwo from "@/components/Home/sliderHomeTwo";
 import sliderHomeThree from "@/components/Home/sliderHomeThree.vue";
@@ -43,6 +45,7 @@ export default {
     onerilenBreaking,
     topTenSeries,
     footers,
+    myList,
   },
 };
 </script>

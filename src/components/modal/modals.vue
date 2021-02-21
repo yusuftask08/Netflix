@@ -35,13 +35,12 @@
             </div>
             <div class="modal-title">
               <h1 class="text-white">{{ modalData.original_title }}</h1>
-              <h1 class="text-white">{{ modalData.original_name }}</h1>
             </div>
             <div class="btn-modal">
               <button
                 id="buttonPlay"
                 class="button"
-                style="width: 150px; height: 50px; font-size: 20px"
+                style="width: 170px; height: 50px; font-size: 20px"
               >
                 <i class="fas fa-play"></i>
 
@@ -177,8 +176,7 @@
                             {{ item.vote_average }}</span
                           >
                           <span
-                            style="margin-left: 15px; color:   color: rgb(204, 203, 203);
-"
+                            style="margin-left: 15px; color:   color: rgb(204, 203, 203);"
                             >{{ item.release_date }}</span
                           >
                           <span
@@ -197,6 +195,91 @@
                 </div>
               </div>
             </div>
+            <div class="divider-border"></div>
+            <div class="track-container">
+              <div class="track-content">
+                <div class="about-wrapper">
+                  <span class="benzer-span" style="margin-bottom: 0px">
+                    <strong> {{ modalId.original_title }} </strong>
+                    <p style="margin-left: 10px">Hakkında</p>
+                  </span>
+                </div>
+                <div class="about-container">
+                  <div class="col-sm-right" style="margin-left: 0px !important">
+                    <div class="director-content">
+                      <span style="color: #777">Yönetmen: </span>
+                      <span class="" style="margin-left: 5px; color: #ddd">
+                        {{ modalId.credits.crew[1].name }}
+                      </span>
+                    </div>
+                    <div class="cast-content">
+                      <span style="color: #777">Oyuncu Kadrosu: </span>
+                      <span style="color: #ddd">
+                        {{ modalId.credits.cast[0].name }},
+                        {{ modalId.credits.cast[1].name }},
+                        {{ modalId.credits.cast[2].name }},
+                        {{ modalId.credits.cast[3].name }},
+                        {{ modalId.credits.cast[4].name }},
+                        {{ modalId.credits.cast[5].name }},
+                        {{ modalId.credits.cast[6].name }},
+                        {{ modalId.credits.cast[7].name }},
+                        {{ modalId.credits.cast[8].name }},
+                        {{ modalId.credits.cast[9].name }}
+                      </span>
+                    </div>
+                    <div class="writing-content">
+                      <span style="color: #777">Senarist: </span>
+                      <span style="color: #ddd">
+                        {{ modalId.credits.crew[10].name }},
+                        {{ modalId.credits.crew[11].name }},
+                        {{ modalId.credits.crew[12].name }}
+                      </span>
+                    </div>
+                    <div class="genres-content">
+                      <span style="color: #777">Türler: </span>
+
+                      <span
+                        style="color: #ddd; margin-right: 3px"
+                        v-for="item in modalId.genres"
+                        :key="item.id"
+                      >
+                        {{ item.name }}</span
+                      >
+                    </div>
+
+                    <div class="original-dil-content">
+                      <span style="color: #777">Orijinal Dil: </span>
+                      <span
+                        class="Pborder"
+                        style="
+                          margin-left: 5px;
+                          text-transform: uppercase;
+                          color: #ddd;
+                        "
+                      >
+                        {{ modalId.original_language }}
+                      </span>
+                    </div>
+                    <div class="adult-content">
+                      <span style="color: #777">Yetişkinlik Düzeyi: </span>
+                      <span
+                        class="Pborder"
+                        style="margin-left: 5px; color: #ddd"
+                      >
+                        18+
+                      </span>
+                      <span style="margin-left: 5px; color: #ddd">
+                        {{
+                          modalId.adult == true ||
+                          "18 yaş ve üzerindeki izleyiciler için uygun"
+                        }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
           </div>
         </div>
       </div>
@@ -261,6 +344,69 @@ export default {
 </script> 
 
 <style>
+.adult-content {
+  margin-left: 0;
+  margin: 0.5em;
+  font-size: 14px;
+  line-height: 20px;
+  word-break: break-word;
+  text-align: left;
+}
+.writing-content {
+  margin-left: 0;
+  margin: 0.5em;
+  font-size: 14px;
+  line-height: 20px;
+  word-break: break-word;
+  text-align: left;
+}
+.about-container {
+  display: flex;
+  justify-content: flex-start;
+}
+.director-content {
+  margin-left: 0;
+  margin: 0.5em;
+  font-size: 14px;
+  line-height: 20px;
+  word-break: break-word;
+  text-align: left;
+}
+.original-dil-content {
+  margin-left: 0;
+  margin: 0.5em;
+  font-size: 14px;
+  line-height: 20px;
+  word-break: break-word;
+  text-align: left;
+}
+.genres-content {
+  margin-left: 0;
+  margin: 0.5em;
+  font-size: 14px;
+  line-height: 20px;
+  word-break: break-word;
+  text-align: left;
+}
+.cast-content {
+  margin-left: 0;
+  margin: 0.5em;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  word-break: break-word;
+}
+.about-wrapper {
+  background-color: #181818;
+  margin-left: 5px;
+}
+.divider-border {
+  border-bottom: 2px solid #404040;
+  height: 6em;
+}
+.divider {
+  margin-top: 300px;
+}
 .images-modal-show {
   top: 0;
   height: 100%;
@@ -427,7 +573,6 @@ export default {
   color: #dbdbdb;
   cursor: pointer;
   background-color: #2a2a2ad3;
-  margin-right: 16px;
   width: 60px;
   height: 60px;
   font-size: 20px;
@@ -480,7 +625,7 @@ export default {
 #buttonPlay {
   width: 130px;
   height: 44px;
-  margin-right: 20px;
+  margin-right: 10px;
   background-color: #fff;
   color: black;
 }
@@ -512,10 +657,11 @@ export default {
   font-size: 16px;
   z-index: 2;
   height: 800px;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: scroll;
   box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
   width: 850px;
+  margin-bottom: 20px;
 }
 .card {
   background-color: #212529;

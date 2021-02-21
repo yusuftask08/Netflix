@@ -2,37 +2,56 @@
   <div class="text-span">
     <span> Netlix Orijinal İçerikleri </span>
   </div>
+  <swiper
+    :slides-per-view="4"
+    :space-between="0"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
+    :mousewheel-control="false"
+    :performance-mode="false"
+    :pagination-visible="true"
+    :pagination-clickable="false"
+    :autoScrollOffset="0"
+    :draggable="false"
+    :mousewheel="false"
+    navigation
+    class="item swiper-scrollbar-lock"
+    style="height: auto !important"
+  >
+    <swiper-slide v-for="gundem in gundemList" :key="gundem.id">
+      <div class="container-card-original ms-5">
+        <div class="imdb">
+          <div class="ms-3 originalCard">
+            <img
+              :src="'http://image.tmdb.org/t/p/w500/' + gundem.poster_path"
+              class="card-img-top"
+              alt="..."
+            />
 
-  <div class="container-card-original ms-5">
-    <div class="imdb" v-for="gundem in gundemList" :key="gundem.id">
-      <div class="ms-3 originalCard">
-        <img
-          
-          :src="'http://image.tmdb.org/t/p/w500/' + gundem.poster_path"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="film_info_original_card">
-          <div class="list-icon-left_original">
-            <i
-              class="fas fa-play right"
-              style="background: white; color: black"
-            >
-            </i>
-            <i class="fas fa-plus toolTip right-2">
-              <span class="toolTiptext tool-span"> Listeme ekle </span>
-            </i>
-            <a @click="showDetail(gundem)">
-              <i class="fas fa-chevron-down toolTip">
-                <span class="toolTiptext tool-span"> Daha fazla bilgi </span>
-              </i></a
-            >
-            <h3 class="title text-white">{{ gundem.original_title }}</h3>
+            <div class="film_info_original_card">
+              <div class="list-icon-left_original">
+                <i
+                  class="fas fa-play right"
+                  style="background: white; color: black"
+                >
+                </i>
+                <i class="fas fa-plus toolTip right-2">
+                  <span class="toolTiptext tool-span"> Listeme ekle </span>
+                </i>
+                <a @click="showDetail(gundem)">
+                  <i class="fas fa-chevron-down toolTip">
+                    <span class="toolTiptext tool-span">
+                      Daha fazla bilgi
+                    </span>
+                  </i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </swiper-slide>
+  </swiper>
+
   <modals
     :modalData="modalData"
     :modalId="modalId"
@@ -45,11 +64,20 @@
 import axios from "axios";
 import modals from "@/components/modal/modals";
 import { Modal } from "vue-neat-modal";
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
 
+// Import Swiper styles
+import "swiper/components/navigation/navigation.scss";
+import "swiper/swiper.scss";
 export default {
   components: {
     modals,
     Modal,
+    Swiper,
+    SwiperSlide,
+    Navigation,
   },
   data() {
     return {
@@ -63,7 +91,7 @@ export default {
   },
   methods: {
     async showDetail(gundem) {
-      console.log('isOpenACILIYORMU :>> ', this.isOpen);
+      console.log("isOpenACILIYORMU :>> ", this.isOpen);
       this.showLoading = true;
       try {
         await axios
