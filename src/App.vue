@@ -1,19 +1,14 @@
 <template>
-<div>
-    <navBar />
+  <div>
     <router-view></router-view>
-
-</div>
+  </div>
 </template>
 
 <script>
-import navBar from "@/components/Home/navBar";
 import backgroundMovie from "@/components/Home/backgroundMovie";
 export default {
-    components: {
-        navBar,
-        backgroundMovie,
-    },
-  
+  components: {
+    backgroundMovie,
+  },
 };
 </script>

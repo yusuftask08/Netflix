@@ -1,16 +1,17 @@
 <template>
   <div>
+    <navBar />
     <backgroundMovie />
     <myList />
     <sliderHome />
     <sliderHomeTwo />
-    <sliderHomeThree />
+    <sliderHomeThree /> 
     <sliderHomeFour />
     <sliderHomeFive />
     <netflixOriginalContent />
     <diziler />
     <onerilenBreaking />
-    <topTenSeries />
+    <dayPopularTv />
     <footers />
   </div>
 </template>
@@ -28,7 +29,7 @@ import sliderHomeFive from "@/components/Home/sliderHomeFive.vue";
 import netflixOriginalContent from "@/components/Home/netflixOriginalContent.vue";
 import diziler from "@/components/series/diziler.vue";
 import onerilenBreaking from "@/components/series/onerilenBreaking.vue";
-import topTenSeries from "@/components/series/topTenSeries.vue";
+import dayPopularTv from "@/components/NewPopular/dayPopularTv.vue";
 import footers from "@/components/footer/footers.vue";
 
 export default {
@@ -43,7 +44,7 @@ export default {
     netflixOriginalContent,
     diziler,
     onerilenBreaking,
-    topTenSeries,
+    dayPopularTv,
     footers,
     myList,
   },

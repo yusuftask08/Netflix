@@ -1,6 +1,6 @@
 <template>
   <div class="text-span">
-    <span> Swiper deneme </span>
+    <span> Günün Popüler Dizileri </span>
   </div>
 
   <swiper

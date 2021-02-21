@@ -7,7 +7,8 @@ import store from './store'
 import "./assets/style.css"
 // GLOBAL Component Registration
 import modals from "@/components/modal/modals";
-import miniModalDetail from "@/components/modal/miniModalDetail";
+import navBar from "@/components/Home/navBar";
+
 import 'vue-neat-modal/dist/vue-neat-modal.css'
 import {
     Modal
@@ -22,6 +23,7 @@ app.use(store);
 app.use(router);
 app.use(VueYouTubeIframe);
 app.component("modals", modals);
-app.component("miniModalDetail", miniModalDetail);
 app.component('AppModal', Modal);
+app.component('navBar', navBar);
+
 app.mount("#app");

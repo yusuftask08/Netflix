@@ -1,9 +1,10 @@
 <template>
   <div>
+    <navBar />
     <backgroundSeries />
     <myList />
     <diziler />
-    <topTenSeries />
+    <dayPopularTv />
     <onerilenDiziler />
     <onerilenBreaking />
     <netflix />
@@ -14,7 +15,7 @@
 import diziler from "@/components/series/diziler";
 import backgroundSeries from "@/components/series/backgroundSeries";
 import myList from "@/components/series/myList";
-import topTenSeries from "@/components/series/topTenSeries";
+import dayPopularTv from "@/components/NewPopular/dayPopularTv";
 import onerilenDiziler from "@/components/series/onerilenDiziler";
 import onerilenBreaking from "@/components/series/onerilenBreaking";
 import netflix from "@/components/series/netflix";
@@ -25,7 +26,7 @@ export default {
     diziler,
     backgroundSeries,
     myList,
-    topTenSeries,
+    dayPopularTv,
     onerilenDiziler,
     onerilenBreaking,
     netflix,

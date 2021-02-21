@@ -1,14 +1,15 @@
 <template>
-    <div>
-        <footers />
-    </div>
+  <div>
+    <navBar />
+    <footers />
+  </div>
 </template>
 <script>
-import footers from '@/components/footer/footers';
+import footers from "@/components/footer/footers";
 
 export default {
-    components : {
-        footers,
-    }
-}
+  components: {
+    footers,
+  },
+};
 </script>

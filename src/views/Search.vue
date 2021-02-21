@@ -1,22 +1,18 @@
 <template>
-<navBar />
-<movieList />
-<footers />
+  <navBar />
+  <movieList />
+  <footers />
 </template>
 <script>
 import movieList from "@/components/Home/movieList";
-import navBar from "@/components/Home/navBar";
-import footers from '@/components/footer/footers.vue';
+import footers from "@/components/footer/footers.vue";
 export default {
-    components : {
-        movieList ,
-        navBar,
-        footers
-        
-    }
-}
+  components: {
+    movieList,
+    footers,
+  },
+};
 </script>
 <style>
-
 </style>
 
