@@ -1,39 +1,73 @@
 <template>
   <div>
-    <div class="nextReleasesContainer">
-      <div class="videoContainer">
-        <video autoplay muted loop src="@/assets/lucy.mp4"></video>
+    <div class="nextReleasesContainer" style="background: none">
+      <div class="videoContainer" style="top: -50px !important">
+        <video autoplay muted loop src="@/assets/theplat.mp4"></video>
       </div>
 
       <div class="containerReleases">
-        <h1>L U C Y</h1>
-        <p style="font-size:24px !important;">
-          Uyuşturucu kaçakçılığının onu bir tür süper kahramana dönüştüreceğini
-          kim tahmin edebilirdi ki?
+        <h1>THE PLATFORM</h1>
+        <p style="font-size: 18px !important">
+          Bir hapishanede üzeri yiyecekle kaplı bir platform kat kat aşağı iner.
+          Üst katlardaki mahkûmlar doyasıya yerken alttakiler aç ve çaresiz
+          kalır. İsyan kaçınılmazdır.
         </p>
-        <button id="buttonPlay">
+        <button id="buttonPlay" @click="showDetail()">
           <i class="fas fa-play"></i>
 
           <span>Oynat</span>
         </button>
-        <button @click="isOpen = !isOpen" id="buttonInfo">
+        <button @click="showDetail()" id="buttonInfo">
           <i class="fas fa-info-circle"></i>
-          <span> Daha Fazla Bilgi</span>
+          <span> Daha Fazla Bilgi </span>
         </button>
+        <modals />
       </div>
     </div>
 
-    <modals v-model="isOpen" />
+    <modals
+      v-model="isOpen"
+      :modalData="modalData"
+      :videoId="videoId"
+      :modalId="modalId"
+    />
   </div>
 </template>
 <script>
-import modals from "../modal/modals.vue";
+import modals from "@/components/modal/modals.vue";
+import axios from "axios";
 export default {
   components: { modals },
   data() {
     return {
       isOpen: false,
+      modalId: [],
+      modalData: [],
+      videoId: [],
     };
+  },
+  methods: {
+    async showDetail() {
+      try {
+        await axios
+          .get(
+            `https://api.themoviedb.org/3/movie/619264?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&append_to_response=videos,credits,release_dates,similar`
+          )
+          .then((response) => {
+            console.log("theplatfrom", response);
+            this.modalId = response.data;
+            this.modalData = this.modalId;
+            console.log("this.modalData :>> ", this.modalData);
+          });
+
+        this.isOpen = true;
+        this.videoId = this.modalData.videos.results;
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.showLoading = false;
+      }
+    },
   },
 };
 </script>

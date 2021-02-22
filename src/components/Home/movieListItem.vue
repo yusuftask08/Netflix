@@ -56,7 +56,6 @@ export default {
     return {
       isOpen: false,
       modalData: [],
-      modalData: [],
       modalId: null,
       videoId: [],
       showLoading: true,
@@ -76,7 +75,7 @@ export default {
             this.modalData = movie;
           });
 
-        console.log("movie", movie);
+        console.log("modalDatas", this.modalData);
         this.isOpen = true;
 
         this.videoId = this.modalId.videos.results;
