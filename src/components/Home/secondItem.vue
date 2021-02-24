@@ -6,7 +6,7 @@
         type="text"
         class="form-control me-5"
         v-model="searchKey"
-        placeholder="Hadi birşey arayalım.."
+        placeholder="Film.."
         @keydown.enter="
           searchMovie(searchKey, searchpage(), (searchopen = false))
         "
@@ -51,14 +51,19 @@
               />
               <span style="font-size: 14px; color: #fff">YUSUF</span>
             </router-link>
+            <hr style="color: #fff" />
             <router-link class="dropdown-item" to="/myList">
               <span style="font-size: 14px; color: #fff">Listem</span>
             </router-link>
           </li>
-          <li><hr class="dropdown-divider" /></li>
-          <router-link class="dropdown-item" to="/account">
-            <span style="font-size: 14px; color: #fff">Hesabım</span>
-          </router-link>
+          <li>
+            <a href="/">
+              <router-link class="dropdown-item" to="/account">
+                <span style="font-size: 14px; color: #fff">Hesabım</span>
+              </router-link></a
+            >
+          </li>
+
           <li>
             <a class="dropdown-item" href="#" @click.prevent="logout">
               <span style="font-size: 14px; color: #fff">Çıkış yap</span>
@@ -98,6 +103,16 @@ export default {
 };
 </script>
 <style >
+.form-control {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.form-control:focus {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: grey;
+  color: #fff;
+  box-shadow: none !important;
+}
 .show {
   background: rgba(0, 0, 0, 0.9);
 }
@@ -112,7 +127,12 @@ export default {
 }
 .dropdown-menu {
   min-width: 0em !important;
-  left: -100px;
+  left: -120px;
+}
+.dropdown-menu li a:hover {
+  text-decoration: underline;
+  color: #fff;
+  background-color: transparent;
 }
 </style>
 

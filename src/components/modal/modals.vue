@@ -422,6 +422,10 @@ export default {
   position: fixed;
   height: 435px;
 }
+#youtube-vue-player-soma {
+  position: relative;
+
+}
 .imagesopacity {
   opacity: 0;
   transition: 300ms all;
@@ -505,6 +509,7 @@ export default {
   font-size: 24px;
   margin-bottom: 20px;
   margin-top: 48px;
+  align-items: center;
 }
 .tagline {
   margin-top: 10px;

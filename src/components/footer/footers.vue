@@ -33,10 +33,10 @@
       </div>
     </section>
 
-    <footer>
+    <div class="footers">
       <p>copy 1997-2021 Netflix, Inc.</p>
       <p>Yusuf Taskiran copy 2021</p>
-    </footer>
+    </div>
   </div>
 </template>
 <style>
@@ -89,7 +89,7 @@
   padding: 10px;
 }
 
-footer {
+.footers {
   padding: 20px;
   text-align: center;
   color: grey;

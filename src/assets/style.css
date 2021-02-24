@@ -37,7 +37,7 @@
 
 .containerReleases {
     width: 500px;
-    margin-left: 40px;
+    margin-left: 50px;
 }
 
 .containerReleases h1 {
@@ -47,6 +47,7 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 30px;
     position: relative;
+    margin-left: -3px;    
 }
 
 .containerReleases p {
@@ -160,9 +161,8 @@
 
 .text-span {
     color: #fff;
-    margin-left: 50px;
+    margin-left: 55px;
     font-size: 25px;
-    margin-bottom: 20px !important;
     margin-top: 60px !important;
 }
 
@@ -222,9 +222,11 @@ img {
     opacity: 1;
     background: linear-gradient(to top, #000, #0003 70%, #0000);
 }
+
 .swiper-container-pointer-events {
     touch-action: none !important;
 }
+
 .list-icon-left_original i {
     padding: 20px;
     border: 2px solid #fff !important;

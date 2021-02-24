@@ -6,9 +6,9 @@
       </div>
 
       <div class="showcase-content">
-        <div class="formm">
+        <div class="formm" style="margin-bottom: 10px !important">
           <form>
-            <h1>Oturum Aç</h1>
+            <h1>Kayıt ol</h1>
             <div class="info">
               <input
                 class="email"
@@ -19,38 +19,27 @@
               <input class="email" type="password" placeholder="Parola" />
             </div>
             <div class="btn">
-              <button class="btn-red" type="submit">Oturum Aç</button>
+              <button class="btn-red" type="submit">Kayıt ol</button>
             </div>
             <div class="help">
-              <div class="beni-hatirla">
-                <input value="true" type="checkbox" /><label
-                  >Beni hatırla</label
-                >
-              </div>
+              <p>
+                Hesabım var
 
-              <a href="https://www.netflix.com/dz-en/LoginHelp"
-                >Yardım ister misiniz ?</a
-              >
+                <router-link to="/login">
+                  <a href="https://www.netflix.com/dz-en/">
+                    <strong>Giriş yap</strong>
+                  </a></router-link
+                >
+              </p>
             </div>
           </form>
         </div>
 
-        <div class="fcbk">
+        <div class="fcbk" style="margin-bottom: 10px!">
           <a href="https://facebook.com">
             <img src="https://i.ibb.co/LrVMXNR/social-fb.png" alt="Facebook" />
           </a>
           <p>Facebook ile Oturum aç</p>
-        </div>
-        <div class="signup">
-          <p>
-            Netflix'e katılmak istermisiniz ?
-
-            <router-link to="/Register">
-              <a href="https://www.netflix.com/dz-en/">
-                <strong>Şimdi Kaydolun.</strong>
-              </a></router-link
-            >
-          </p>
         </div>
 
         <div class="more">
@@ -60,7 +49,6 @@
           </p>
         </div>
       </div>
-
       <footer>
         <div class="ftr-content">
           <div class="contact">

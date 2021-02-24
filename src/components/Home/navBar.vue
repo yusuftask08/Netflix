@@ -9,11 +9,12 @@
         <div class="container-fluid">
           <a
             href="/"
-            style="margin-right: 20px; margin-left: 60px"
+            style="margin-right: 20px; margin-left: 50px"
           >
             <img
-              src="https://fontmeme.com/permalink/210120/712ea9082fffc8db3ce43a79a7416286.png"
+              src="https://i.ibb.co/r5krrdz/logo.png"
               alt="netflix-font"
+              style="width:120px"
             />
           </a>
           <navBarItem />

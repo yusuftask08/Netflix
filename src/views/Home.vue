@@ -4,8 +4,10 @@
     <backgroundMovie />
     <myList />
     <sliderHome />
+    <dayPopularTv />
+
     <sliderHomeTwo />
-    <sliderHomeThree /> 
+    <sliderHomeThree />
     <sliderHomeFour />
     <sliderHomeFive />
     <netflixOriginalContent />
@@ -57,6 +59,7 @@ export default {
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  
 }
 body {
   background-color: #141414;

@@ -1,61 +1,70 @@
 <template>
-  <div class="text-span">
-    <span> Outside the Wire Adlı Yapımı İzleyenlere Öneriler </span>
-  </div>
-  <swiper
-    :slides-per-view="7"
-    :space-between="0"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-    :mousewheel-control="false"
-    :performance-mode="false"
-    :pagination-visible="true"
-    :pagination-clickable="false"
-    :autoScrollOffset="0"
-    :draggable="false"
-    :mousewheel="false"
-    navigation
-    class="item swiper-scrollbar-lock ms-5"
-  >
-    <swiper-slide v-for="OutOnerilenler in OutOnerilenler" :key="OutOnerilenler.id">
-      <div class="ms-2 me-2 movie_card item">
-        <img
-          :src="'http://image.tmdb.org/t/p/w500/' + OutOnerilenler  .poster_path"
-          class="card-img-top"
-          alt="..."
-        />
+  <div class="out-izleyen-oneri">
+    <div class="text-span">
+      <span> Outside the Wire Adlı Yapımı İzleyenlere Öneriler </span>
+    </div>
+    <swiper
+      :slides-per-view="7"
+      :space-between="0"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+      :mousewheel-control="false"
+      :performance-mode="false"
+      :pagination-visible="true"
+      :pagination-clickable="false"
+      :autoScrollOffset="0"
+      :draggable="false"
+      :mousewheel="false"
+      navigation
+      class="item swiper-scrollbar-lock ms-5"
+    >
+      <swiper-slide
+        v-for="OutOnerilenler in OutOnerilenler"
+        :key="OutOnerilenler.id"
+      >
+        <div class="ms-2 me-2 movie_card item">
+          <img
+            :src="
+              'http://image.tmdb.org/t/p/w500/' + OutOnerilenler.poster_path
+            "
+            class="card-img-top"
+            alt="..."
+          />
 
-        <div class="film_info">
-          <div class="list-icon-left">
-            <a
-              ><i class="fas fa-play" style="background: white; color: black">
-              </i
-            ></a>
+          <div class="film_info">
+            <div class="list-icon-left">
+              <a
+                ><i class="fas fa-play" style="background: white; color: black">
+                </i
+              ></a>
 
-            <a
-              ><i class="fas fa-plus toolTip">
-                <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
-              </i></a
-            >
-            <a @click="showDetail(OutOnerilenler)">
-              <i class="fas fa-chevron-down toolTip">
-                <span class="toolTiptext-sm tool-span-sm">
-                  Daha fazla bilgi
-                </span>
-              </i>
-            </a>
+              <a
+                ><i class="fas fa-plus toolTip">
+                  <span class="toolTiptext-sm tool-span-sm">
+                    Listeme ekle
+                  </span>
+                </i></a
+              >
+              <a @click="showDetail(OutOnerilenler)">
+                <i class="fas fa-chevron-down toolTip">
+                  <span class="toolTiptext-sm tool-span-sm">
+                    Daha fazla bilgi
+                  </span>
+                </i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </swiper-slide>
-  </swiper>
+      </swiper-slide>
+    </swiper>
 
-  <modals
-    :modalData="modalData"
-    :modalId="modalId"
-    :videoId="videoId"
-    v-model="isOpen"
-  />
+    <modals
+      :modalData="modalData"
+      :modalId="modalId"
+      :videoId="videoId"
+      v-model="isOpen"
+    />
+  </div>
 </template>
 
 <script>

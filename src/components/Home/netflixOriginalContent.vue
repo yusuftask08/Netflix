@@ -1,5 +1,6 @@
 <template>
-  <div class="text-span">
+<div class="netflix-original-icerik">
+  <div class="text-span" style="margin-left:61px">
     <span> Netlix Orijinal İçerikleri </span>
   </div>
   <swiper
@@ -51,13 +52,13 @@
       </div>
     </swiper-slide>
   </swiper>
-
   <modals
     :modalData="modalData"
     :modalId="modalId"
     :videoId="videoId"
     v-model="isOpen"
   />
+  </div>
 </template>
 
 <script>
