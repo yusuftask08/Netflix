@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   createStore
 } from 'vuex'
+import users from "./modules/users"
 export default createStore({
   state: {
     movies: [],
@@ -37,5 +38,7 @@ export default createStore({
         });
     }
   },
-  modules: {}
+  modules: {
+    users,
+  }
 })

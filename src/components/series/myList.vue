@@ -3,8 +3,14 @@
     <div class="text-span">
       <span> Listem</span>
     </div>
-
-    <swiper
+    <div class="div" style="color: #fff">
+      <pre>
+ 
+      {{ favoriteList() }}
+    </pre
+      >
+    </div>
+    <!-- <swiper
       :slides-per-view="7"
       :space-between="0"
       @swiper="onSwiper"
@@ -16,10 +22,10 @@
       navigation
       class="item ms-5"
     >
-      <swiper-slide v-for="seriesList in seriesList" :key="seriesList.id">
+      <swiper-slide>
         <div class="ms-2 me-2 movie_card item" style="width: 11rem !important">
           <img
-            :src="'http://image.tmdb.org/t/p/w500/' + seriesList.poster_path"
+            src="'http://image.tmdb.org/t/p/w500/' + "
             class="card-img-top"
             alt="..."
           />
@@ -39,7 +45,7 @@
           </div>
         </div>
       </swiper-slide>
-    </swiper>
+    </swiper> -->
   </div>
 </template>
 <script>
@@ -50,7 +56,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 // Import Swiper styles
 import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
-import axios from "axios";
+import { mapGetters } from 'vuex';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default {
@@ -64,16 +70,6 @@ export default {
       seriesList: [],
     };
   },
-  created() {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&page=2"
-      )
-      .then((response) => {
-        console.log("", response);
-        this.seriesList = response.data.results;
-      });
-  },
 
   methods: {
     onSwiper(swiper) {
@@ -82,7 +78,11 @@ export default {
     onSlideChange() {
       console.log("slide change");
     },
+    ...mapGetters({
+      favoriteList: "users/favoriteList",
+    }),
   },
+
 };
 </script>
 <style>

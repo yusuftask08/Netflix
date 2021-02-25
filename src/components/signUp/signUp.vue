@@ -11,15 +11,23 @@
             <h1>Oturum Aç</h1>
             <div class="info">
               <input
+                v-model="userData.email"
                 class="email"
                 type="email"
                 placeholder="E‑posta veya telefon numarası"
               />
               <br />
-              <input class="email" type="password" placeholder="Parola" />
+              <input
+                v-model="userData.password"
+                class="email"
+                type="current-password"
+                placeholder="Parola"
+              />
             </div>
             <div class="btn">
-              <button class="btn-red" type="submit">Oturum Aç</button>
+              <button @click="Loggin({ ...userData })" class="btn-red">
+                Oturum Aç
+              </button>
             </div>
             <div class="help">
               <div class="beni-hatirla">
@@ -92,6 +100,24 @@
     </header>
   </div>
 </template>
+<script>
+import { mapActions } from "vuex";
+export default {
+  data() {
+    return {
+      userData: {
+        email: "yusuftask@",
+        password: "12345",
+      },
+    };
+  },
+  methods: {
+    ...mapActions({
+      Loggin: "users/Loggin",
+    }),
+  },
+};
+</script>
 <style>
 * {
   box-sizing: border-box;
@@ -252,7 +278,7 @@ input[type="email"] {
   background: #343434;
 }
 
-input[type="password"] {
+input[type="current-password"] {
   background: #343434;
 }
 
@@ -356,12 +382,11 @@ footer {
   text-align: start;
 }
 .select select {
-  width: 100px;
+  width: 80px;
   height: 40px;
   border: none;
   font-size: inherit;
-  color: #fff;
-  padding-left: 10px;
+  color: #999;
   background: #333333;
   text-align: start;
 }

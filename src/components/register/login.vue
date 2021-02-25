@@ -11,15 +11,33 @@
             <h1>Kayıt ol</h1>
             <div class="info">
               <input
+                v-model="userData.full_name"
+                class="name"
+                type="name"
+                placeholder="Ad Soyad"
+              />
+              <input
+                v-model="userData.email"
                 class="email"
                 type="email"
                 placeholder="E‑posta veya telefon numarası"
               />
               <br />
-              <input class="email" type="password" placeholder="Parola" />
+              <input
+                v-model="userData.password"
+                class="email"
+                type="current-password"
+                placeholder="Parola"
+              />
             </div>
             <div class="btn">
-              <button class="btn-red" type="submit">Kayıt ol</button>
+              <button
+                @click="onSave({ ...userData })"
+                class="btn-red"
+                type="submit"
+              >
+                Kayıt ol
+              </button>
             </div>
             <div class="help">
               <p>
@@ -69,8 +87,6 @@
           </div>
           <div class="select">
             <select>
-              <i class="fas fa-globe"></i>
-
               <option>Türkçe</option>
               <option>English</option>
             </select>
@@ -80,6 +96,29 @@
     </header>
   </div>
 </template>
+<script>
+import { mapActions } from "vuex";
+export default {
+  data() {
+    return {
+      userData: {
+        full_name: null,
+        email: null,
+        password: null,
+      },
+    };
+  },
+  methods: {
+    ...mapActions({
+      onSave: "users/register",
+    }),
+    // onSave() {
+    //   console.log("this.userData   :>> ", this.userData);
+    //   this.$store.dispatch("users/register", { ...this.userData });
+    // },
+  },
+};
+</script>
 <style>
 * {
   box-sizing: border-box;
@@ -187,6 +226,17 @@ img {
   padding: 10px;
   font-size: inherit;
   color: #fff;
+  background: #343434;
+}
+.name {
+  margin-bottom: 30px;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: inherit;
+  color: #fff;
 }
 
 .formm .btn {
@@ -236,7 +286,7 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 
-input[type="email"] {
+input[type="name"] {
   background: #343434;
 }
 
@@ -344,12 +394,11 @@ footer {
   text-align: start;
 }
 .select select {
-  width: 100px;
+  width: 80px;
   height: 40px;
   border: none;
   font-size: inherit;
-  color: #fff;
-  padding-left: 10px;
+  color: #999;
   background: #333333;
   text-align: start;
 }

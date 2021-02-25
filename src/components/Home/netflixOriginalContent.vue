@@ -1,63 +1,64 @@
 <template>
-<div class="netflix-original-icerik">
-  <div class="text-span" style="margin-left:61px">
-    <span> Netlix Orijinal İçerikleri </span>
-  </div>
-  <swiper
-    :slides-per-view="4"
-    :space-between="0"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-    :mousewheel-control="false"
-    :performance-mode="false"
-    :pagination-visible="true"
-    :pagination-clickable="false"
-    :autoScrollOffset="0"
-    :draggable="false"
-    :mousewheel="false"
-    navigation
-    class="item swiper-scrollbar-lock"
-    style="height: auto !important"
-  >
-    <swiper-slide v-for="gundem in gundemList" :key="gundem.id">
-      <div class="container-card-original ms-5">
-        <div class="imdb">
-          <div class="ms-3 originalCard">
-            <img
-              :src="'http://image.tmdb.org/t/p/w500/' + gundem.poster_path"
-              class="card-img-top"
-              alt="..."
-            />
+  <div class="netflix-original-icerik">
+    <div class="text-span" style="margin-left: 61px">
+      <span> Netlix Orijinal İçerikleri </span>
+    </div>
+    <swiper
+      :slides-per-view="4"
+      :space-between="0"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+      :mousewheel-control="false"
+      :performance-mode="false"
+      :pagination-visible="true"
+      :pagination-clickable="false"
+      :autoScrollOffset="0"
+      :draggable="false"
+      :mousewheel="false"
+      navigation
+      class="item swiper-scrollbar-lock"
+      style="height: auto !important"
+    >
+      <swiper-slide v-for="gundem in gundemList" :key="gundem.id">
+        <div class="container-card-original ms-5">
+          <div class="imdb">
+            <div class="ms-3 originalCard">
+              <img
+                :src="'http://image.tmdb.org/t/p/w500/' + gundem.poster_path"
+                class="card-img-top"
+                alt="..."
+              />
 
-            <div class="film_info_original_card">
-              <div class="list-icon-left_original">
-                <i
-                  class="fas fa-play right"
-                  style="background: white; color: black"
-                >
-                </i>
-                <i class="fas fa-plus toolTip right-2">
-                  <span class="toolTiptext tool-span"> Listeme ekle </span>
-                </i>
-                <a @click="showDetail(gundem)">
-                  <i class="fas fa-chevron-down toolTip">
-                    <span class="toolTiptext tool-span">
-                      Daha fazla bilgi
-                    </span>
-                  </i></a>
+              <div class="film_info_original_card">
+                <div class="list-icon-left_original">
+                  <i
+                    class="fas fa-play right"
+                    style="background: white; color: black"
+                  >
+                  </i>
+                  <i class="fas fa-plus toolTip right-2">
+                    <span class="toolTiptext tool-span"> Listeme ekle </span>
+                  </i>
+                  <a @click="showDetail(gundem)">
+                    <i class="fas fa-chevron-down toolTip">
+                      <span class="toolTiptext tool-span">
+                        Daha fazla bilgi
+                      </span>
+                    </i></a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </swiper-slide>
-  </swiper>
-  <modals
-    :modalData="modalData"
-    :modalId="modalId"
-    :videoId="videoId"
-    v-model="isOpen"
-  />
+      </swiper-slide>
+    </swiper>
+    <modals
+      :modalData="modalData"
+      :modalId="modalId"
+      :videoId="videoId"
+      v-model="isOpen"
+    />
   </div>
 </template>
 
@@ -115,6 +116,12 @@ export default {
       } finally {
         this.showLoading = false;
       }
+    },
+    onSwiper(swiper) {
+      console.log(swiper);
+    },
+    onSlideChange() {
+      console.log("slide change");
     },
   },
   created() {

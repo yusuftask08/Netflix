@@ -1,7 +1,13 @@
 <template>
   <div>
     <navBar />
-  
+
     <h3>Listem</h3>
-  </div>
+   
+    </div>
 </template>
+<script>
+export default {
+  
+};
+</script>

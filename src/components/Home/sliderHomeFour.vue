@@ -115,6 +115,12 @@ export default {
         this.showLoading = false;
       }
     },
+    onSwiper(swiper) {
+      console.log(swiper);
+    },
+    onSlideChange() {
+      console.log("slide change");
+    },
   },
 
   created() {

@@ -20,12 +20,21 @@
 
     <i class="fas fa-gift me-4 text-white fs-sm-4"></i>
     <i class="fas fa-bell me-4 text-white fs-sm-4"></i>
-    <img
-      src="https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
-      style="width: 32px; border-radius: 3px"
-      alt=""
-    />
-    <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+    <router-link
+      to="/Login"
+      v-if="!isAuthenticated"
+      tag="button"
+      class="btn btn-outline-dark me-5 mb-2 "
+      style="color:#fff; margin-top:5px; width:120px;"
+    >
+      Giriş Yap</router-link
+    >
+    <ul v-else class="navbar-nav me-0 mb-2 mb-lg-0">
+      <img
+        src="https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
+        style="width: 38px; border-radius: 5px"
+        alt=""
+      />
       <li class="nav-item-down dropdown">
         <a
           @click="menuOpened = !menuOpened"
@@ -43,13 +52,15 @@
           aria-labelledby="navbarDropdown"
         >
           <li>
-            <router-link class="dropdown-item" to="/my-questions">
+            <router-link class="dropdown-item" to="/myList">
               <img
                 src="https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
                 style="width: 32px; border-radius: 3px; margin-right: 15px"
                 alt=""
               />
-              <span style="font-size: 14px; color: #fff">YUSUF</span>
+              <span style="font-size: 14px; color: #fff">
+                {{ currentUser.full_name }}
+              </span>
             </router-link>
             <hr style="color: #fff" />
             <router-link class="dropdown-item" to="/myList">
@@ -58,7 +69,7 @@
           </li>
           <li>
             <a href="/">
-              <router-link class="dropdown-item" to="/account">
+              <router-link class="dropdown-item" to="/myList">
                 <span style="font-size: 14px; color: #fff">Hesabım</span>
               </router-link></a
             >
@@ -76,7 +87,7 @@
 </template>
 <script >
 // import axios from "axios";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -90,6 +101,15 @@ export default {
     searchpage() {
       this.$router.push({ name: "Search" });
     },
+    ...mapMutations({
+      logout: "users/logout",
+    }),
+  },
+  computed: {
+    ...mapGetters({
+      currentUser: "users/currentUser",
+      isAuthenticated: "users/isAuthenticated",
+    }),
   },
   mounted() {
     document

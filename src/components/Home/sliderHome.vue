@@ -26,14 +26,14 @@
             alt="..."
           />
 
-          <div class="film_info">
+          <div class="film_info" v-if="isAuthenticated">
             <div class="list-icon-left">
               <a
                 ><i class="fas fa-play" style="background: white; color: black">
                 </i
               ></a>
 
-              <a
+              <a v-show="isFavorite" @click="addToFavorites(gundem)"
                 ><i class="fas fa-plus toolTip">
                   <span class="toolTiptext-sm tool-span-sm">
                     Listeme ekle
@@ -72,6 +72,7 @@ import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
 // Import Swiper styles
 import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   components: {
     modals,
@@ -83,12 +84,14 @@ export default {
     return {
       gundemList: [],
       isOpen: false,
-      modalData: null,
-      modalId: null,
+      modalData: [],
+      modalId: [],
       videoId: [],
       showLoading: true,
+      red: false,
     };
   },
+
   methods: {
     async showDetail(gundem) {
       console.log("isOpenACILIYORMU :>> ", this.isOpen);
@@ -115,7 +118,27 @@ export default {
         this.showLoading = false;
       }
     },
+
+    onSwiper(swiper) {
+      console.log(swiper);
+    },
+    onSlideChange() {
+      console.log("slide change");
+    },
+    ...mapMutations({
+      addToFavorites: "users/addToFavorites",
+    }),
   },
+  computed: {
+    ...mapGetters({
+      favoriteList: "users/favoriteList",
+      isAuthenticated: "users/isAuthenticated",
+    }),
+    isFavorite() {
+      return this.favoriteList?.find((f) => f.id === modalData.id);
+    },
+  },
+
   created() {
     axios
       .get(
