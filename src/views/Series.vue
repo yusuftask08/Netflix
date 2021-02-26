@@ -2,7 +2,6 @@
   <div>
     <navBar />
     <backgroundSeries />
-    <myList />
     <diziler />
     <dayPopularTv />
     <onerilenDiziler />
@@ -14,7 +13,6 @@
 <script>
 import diziler from "@/components/series/diziler";
 import backgroundSeries from "@/components/series/backgroundSeries";
-import myList from "@/components/series/myList";
 import dayPopularTv from "@/components/NewPopular/dayPopularTv";
 import onerilenDiziler from "@/components/series/onerilenDiziler";
 import onerilenBreaking from "@/components/series/onerilenBreaking";
@@ -25,7 +23,6 @@ export default {
   components: {
     diziler,
     backgroundSeries,
-    myList,
     dayPopularTv,
     onerilenDiziler,
     onerilenBreaking,

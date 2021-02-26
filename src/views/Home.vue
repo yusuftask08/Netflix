@@ -2,10 +2,8 @@
   <div>
     <navBar />
     <backgroundMovie />
-    <myList />
     <sliderHome />
     <dayPopularTv />
-
     <sliderHomeTwo />
     <sliderHomeThree />
     <sliderHomeFour />
@@ -22,7 +20,6 @@
 <script>
 import backgroundMovie from "@/components/Home/backgroundMovie";
 import movieList from "@/components/Home/movieList";
-import myList from "@/components/series/myList";
 import sliderHome from "@/components/Home/sliderHome";
 import sliderHomeTwo from "@/components/Home/sliderHomeTwo";
 import sliderHomeThree from "@/components/Home/sliderHomeThree.vue";
@@ -48,7 +45,6 @@ export default {
     onerilenBreaking,
     dayPopularTv,
     footers,
-    myList,
   },
 };
 </script>
@@ -59,7 +55,6 @@ export default {
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  
 }
 body {
   background-color: #141414;

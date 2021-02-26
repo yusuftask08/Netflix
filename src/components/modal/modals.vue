@@ -424,7 +424,6 @@ export default {
 }
 #youtube-vue-player-soma {
   position: relative;
-
 }
 .imagesopacity {
   opacity: 0;
@@ -501,6 +500,7 @@ export default {
   margin-right: 8px;
   padding-right: 0px !important;
   padding-left: 0px !important;
+  align-items: center;
 }
 .benzer-span {
   display: flex;
@@ -509,7 +509,6 @@ export default {
   font-size: 24px;
   margin-bottom: 20px;
   margin-top: 48px;
-  align-items: center;
 }
 .tagline {
   margin-top: 10px;

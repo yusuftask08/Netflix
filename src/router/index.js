@@ -12,11 +12,11 @@ const routes = [{
         component: Home
     },
     {
-        path: '/MyList',
-        name: 'MyList',
+        path: '/List',
+        name: 'List',
 
         component: () =>
-            import( /* webpackChunkName: "about" */ '@/views/MyList.vue')
+            import( /* webpackChunkName: "about" */ '@/views/List.vue')
     },
     {
         path: '/Movies',
@@ -67,7 +67,7 @@ const router = createRouter({
 })
 router.beforeEach((to, from, next) => {
     let user = null;
-    const authenticatedPages = ["Home", "Movies", "MyList", "NewAndPopular", "Series", "Search"];
+    const authenticatedPages = ["Home", "Movies", "List", "NewAndPopular", "Series", "Search"];
     // local storage üzerinde user varmı?
     if (localStorage?.user) user = JSON.parse(localStorage?.user)
     // localstorage üzerinde user varsa store u güncelle
@@ -76,6 +76,7 @@ router.beforeEach((to, from, next) => {
     };
     // is isAuthenticated bilgisini store üzerinden almak
     const isAuthenticated = store.getters["users/isAuthenticated"]
+    if (isAuthenticated) store.dispatch("users/setFavorites");
 
 
     // rules...
@@ -84,7 +85,9 @@ router.beforeEach((to, from, next) => {
         name: "Login"
     });
     if (isAuthenticated && (to.name === "Login" || to.name === "Register"))
-        next({ name: "Home" });
+        next({
+            name: "Home"
+        });
 
     next();
 

@@ -2,7 +2,6 @@
   <div>
     <navBar />
     <backgroundFilm />
-      <myList />
     <sliderHome />
     <sliderHomeThree />
     <sliderHomeFour />
@@ -17,7 +16,6 @@ import sliderHome from "@/components/Home/sliderHome";
 import sliderHomeTwo from "@/components/Home/sliderHomeTwo";
 import sliderHomeThree from "@/components/Home/sliderHomeThree";
 import sliderHomeFour from "@/components/Home/sliderHomeFour";
-import myList from "@/components/series/myList";
 
 export default {
   components: {
@@ -27,7 +25,6 @@ export default {
     sliderHomeTwo,
     sliderHomeThree,
     sliderHomeFour,
-    myList,
   },
 };
 </script>

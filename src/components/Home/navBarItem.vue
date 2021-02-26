@@ -21,7 +21,7 @@
               </li>
               <li class="nav-item me-2">
                 <!-- <a class="nav-link" href="#">Listem</a> -->
-                <router-link to="/MyList" class="nav-link">Listem</router-link>
+                <router-link to="/List" class="nav-link">Listem</router-link>
               </li>
             </ul>
     </div>

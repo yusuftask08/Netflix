@@ -1,88 +1,107 @@
 <template>
-  <div class="listem-container">
-    <div class="text-span">
-      <span> Listem</span>
-    </div>
-    <div class="div" style="color: #fff">
-      <pre>
- 
-      {{ favoriteList() }}
-    </pre
-      >
-    </div>
-    <!-- <swiper
-      :slides-per-view="7"
-      :space-between="0"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
-      :mousewheel-control="false"
-      :performance-mode="false"
-      :pagination-visible="true"
-      :pagination-clickable="false"
-      navigation
-      class="item ms-5"
-    >
-      <swiper-slide>
-        <div class="ms-2 me-2 movie_card item" style="width: 11rem !important">
-          <img
-            src="'http://image.tmdb.org/t/p/w500/' + "
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="film_info">
-            <div class="list-icon-left">
-              <i class="fas fa-play" style="background: white; color: black">
-              </i>
-              <i class="fas fa-plus toolTip">
-                <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
-              </i>
-              <i class="fas fa-chevron-down toolTip">
-                <span class="toolTiptext-sm tool-span-sm">
-                  Daha fazla bilgi
-                </span>
-              </i>
+  <div class="container">
+    <div class="contanier-text">
+      <div class="icerik contanier-text-title text-white">
+        <div class="text-span">
+          <span> Listem </span>
+        </div>
+        <div class="inline" style="">
+          <div
+            v-for="favori in favoriteList"
+            :key="favori.id"
+            class="ms-2 me-2 movie_card"
+          >
+            <img
+              :src="'http://image.tmdb.org/t/p/w500/' + favori.poster_path"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="film_info">
+              <div class="list-icon-left">
+                <a
+                  ><i
+                    class="fas fa-play"
+                    style="background: white; color: black"
+                  >
+                  </i
+                ></a>
+
+                <a
+                  ><i class="fas fa-plus toolTip">
+                    <span class="toolTiptext-sm tool-span-sm">
+                      Listeme ekle
+                    </span>
+                  </i></a
+                >
+                <a @click="showDetail(favori)">
+                  <i class="fas fa-chevron-down toolTip">
+                    <span class="toolTiptext-sm tool-span-sm">
+                      Daha fazla bilgi
+                    </span>
+                  </i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </swiper-slide>
-    </swiper> -->
+      </div>
+    </div>
+    <modals
+      :modalData="modalData"
+      :modalId="modalId"
+      :videoId="videoId"
+      v-model="isOpen"
+    />
   </div>
 </template>
 <script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import axios from "axios";
+import modals from "@/components/modal/modals";
 
-// Import Swiper styles
-import "swiper/components/navigation/navigation.scss";
-import "swiper/swiper.scss";
-import { mapGetters } from 'vuex';
-
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-    Navigation,
-  },
+  components: { modals },
   data() {
     return {
-      seriesList: [],
+      favoriteList: [],
+      isOpen: false,
+      modalData: [],
+      modalId: [],
+      videoId: [],
+      showLoading: true,
     };
   },
-
   methods: {
-    onSwiper(swiper) {
-      console.log(swiper);
-    },
-    onSlideChange() {
-      console.log("slide change");
-    },
-    ...mapGetters({
-      favoriteList: "users/favoriteList",
-    }),
-  },
+    async showDetail(favori) {
+      this.showLoading = true;
+      try {
+        await axios
+          .get(
+            `https://api.themoviedb.org/3/movie/${favori.id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&append_to_response=videos,credits,release_dates,similar`
+          )
+          .then((response) => {
+            console.log("iddetailvideos", response);
+            this.modalId = response.data;
+            this.modalData = favori;
+          });
 
+        console.log("modalDatas", this.modalData);
+        this.isOpen = true;
+
+        this.videoId = this.modalId.videos.results;
+        console.log("this.videoId :>> ", this.videoId);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.showLoading = false;
+      }
+    },
+  },
+  created() {
+    axios.get("http://localhost:3000/favorites").then((requests) => {
+      console.log("favorilistesiçekildi", requests);
+      this.favoriteList = requests.data;
+    });
+  },
 };
 </script>
 <style>

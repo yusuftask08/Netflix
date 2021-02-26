@@ -33,7 +33,7 @@
                 </i
               ></a>
 
-              <a v-show="isFavorite" @click="addToFavorites(gundem)"
+              <a @click="addFavorite(gundem)"
                 ><i class="fas fa-plus toolTip">
                   <span class="toolTiptext-sm tool-span-sm">
                     Listeme ekle
@@ -72,7 +72,7 @@ import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
 // Import Swiper styles
 import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
-import { mapGetters, mapMutations } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   components: {
     modals,
@@ -88,11 +88,21 @@ export default {
       modalId: [],
       videoId: [],
       showLoading: true,
-      red: false,
     };
   },
 
   methods: {
+    addFavorite(gundem) {
+      axios
+        .post("http://localhost:3000/favorites", {
+          ...gundem,
+          isFavorite: true,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));
+    },
     async showDetail(gundem) {
       console.log("isOpenACILIYORMU :>> ", this.isOpen);
       this.showLoading = true;
@@ -125,18 +135,13 @@ export default {
     onSlideChange() {
       console.log("slide change");
     },
-    ...mapMutations({
-      addToFavorites: "users/addToFavorites",
-    }),
+   
   },
   computed: {
     ...mapGetters({
-      favoriteList: "users/favoriteList",
       isAuthenticated: "users/isAuthenticated",
     }),
-    isFavorite() {
-      return this.favoriteList?.find((f) => f.id === modalData.id);
-    },
+   
   },
 
   created() {

@@ -24,15 +24,15 @@
       to="/Login"
       v-if="!isAuthenticated"
       tag="button"
-      class="btn btn-outline-dark me-5 mb-2 "
-      style="color:#fff; margin-top:5px; width:120px;"
+      class="btn btn-outline-dark me-5 mb-2"
+      style="color: #fff; margin-top: 5px; width: 120px"
     >
       Giriş Yap</router-link
     >
     <ul v-else class="navbar-nav me-0 mb-2 mb-lg-0">
       <img
         src="https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
-        style="width: 38px; border-radius: 5px"
+        style="width: 35px; height: 35px; border-radius: 5px"
         alt=""
       />
       <li class="nav-item-down dropdown">
@@ -52,7 +52,7 @@
           aria-labelledby="navbarDropdown"
         >
           <li>
-            <router-link class="dropdown-item" to="/myList">
+            <router-link class="dropdown-item" to="/List">
               <img
                 src="https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
                 style="width: 32px; border-radius: 3px; margin-right: 15px"
@@ -63,16 +63,14 @@
               </span>
             </router-link>
             <hr style="color: #fff" />
-            <router-link class="dropdown-item" to="/myList">
+            <router-link class="dropdown-item" to="/List">
               <span style="font-size: 14px; color: #fff">Listem</span>
             </router-link>
           </li>
           <li>
-            <a href="/">
-              <router-link class="dropdown-item" to="/myList">
-                <span style="font-size: 14px; color: #fff">Hesabım</span>
-              </router-link></a
-            >
+            <router-link class="dropdown-item" to="/List">
+              <span style="font-size: 14px; color: #fff">Hesabım</span>
+            </router-link>
           </li>
 
           <li>
