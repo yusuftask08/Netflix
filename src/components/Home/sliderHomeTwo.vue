@@ -31,14 +31,14 @@
             alt="..."
           />
 
-          <div class="film_info">
+          <div class="film_info" v-if="isAuthenticated">
             <div class="list-icon-left">
               <a
                 ><i class="fas fa-play" style="background: white; color: black">
                 </i
               ></a>
 
-              <a
+              <a @click="addFavorite(OutOnerilenler)"
                 ><i class="fas fa-plus toolTip">
                   <span class="toolTiptext-sm tool-span-sm">
                     Listeme ekle
@@ -77,6 +77,7 @@ import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
 // Import Swiper styles
 import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
+import { mapGetters } from "vuex";
 export default {
   components: {
     modals,
@@ -88,13 +89,24 @@ export default {
     return {
       OutOnerilenler: [],
       isOpen: false,
-      modalData: null,
-      modalId: null,
+      modalData: [],
+      modalId: [],
       videoId: [],
       showLoading: true,
     };
   },
   methods: {
+    addFavorite(OutOnerilenler) {
+      axios
+        .post("http://localhost:3000/favorites", {
+          ...OutOnerilenler,
+          isFavorite: true,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));
+    },
     async showDetail(OutOnerilenler) {
       console.log("isOpenACILIYORMU :>> ", this.isOpen);
       this.showLoading = true;
@@ -138,19 +150,11 @@ export default {
         this.OutOnerilenler = response.data.results;
       });
   },
+  computed: {
+    ...mapGetters({
+      isAuthenticated: "users/isAuthenticated",
+    }),
+  },
 };
 </script>
    
-OutOnerilenler
-
-        <span> Outside the Wire Adlı Yapımı İzleyenlere Öneriler    </span>
-created() {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/38700/similar?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&page=1"
-      )
-      .then((response) => {
-        console.log("topTenList", response);
-        this.topTenList = response.data.results;
-      });
-  },topTenList: [],

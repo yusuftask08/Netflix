@@ -26,14 +26,14 @@
             alt="..."
           />
 
-          <div class="film_info">
+          <div class="film_info" v-if="isAuthenticated">
             <div class="list-icon-left">
               <a
                 ><i class="fas fa-play" style="background: white; color: black">
                 </i
               ></a>
 
-              <a
+              <a @click="addFavorite(dayPopular)"
                 ><i class="fas fa-plus toolTip">
                   <span class="toolTiptext-sm tool-span-sm">
                     Listeme ekle
@@ -72,6 +72,7 @@ import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
 // Import Swiper styles
 import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
+import { mapGetters } from 'vuex';
 export default {
   components: {
     modals,
@@ -83,13 +84,24 @@ export default {
     return {
       dayPopular: [],
       isOpen: false,
-      modalData: null,
-      modalId: null,
+      modalData: [],
+      modalId: [],
       videoId: [],
       showLoading: true,
     };
   },
   methods: {
+    addFavorite(dayPopular) {
+      axios
+        .post("http://localhost:3000/favorites", {
+          ...dayPopular,
+          isFavorite: true,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));
+    },
     async showDetail(dayPopular) {
       console.log("isOpenACILIYORMU :>> ", this.isOpen);
       this.showLoading = true;
@@ -131,6 +143,11 @@ export default {
         console.log("dayPopular", response);
         this.dayPopular = response.data.results;
       });
+  },
+  computed: {
+    ...mapGetters({
+      isAuthenticated: "users/isAuthenticated",
+    }),
   },
 };
 </script>

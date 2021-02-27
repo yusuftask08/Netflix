@@ -2,10 +2,10 @@
   <div class="container">
     <div class="contanier-text">
       <div class="icerik contanier-text-title text-white">
-        <div class="text-span">
+        <div class="text-span" style="margin-left: 0px; margin-top: 0px">
           <span> Listem </span>
         </div>
-        <div class="inline" style="">
+        <div class="row">
           <div
             v-for="favori in favoriteList"
             :key="favori.id"
@@ -26,10 +26,13 @@
                   </i
                 ></a>
 
-                <a
-                  ><i class="fas fa-plus toolTip">
-                    <span class="toolTiptext-sm tool-span-sm">
-                      Listeme ekle
+                <a @click="deleteItem(favori)"
+                  ><i class="fas fa-check toolTip">
+                    <span
+                      class="toolTiptext-sm tool-span-sm"
+                      style="width: 100px; left: 25% !important"
+                    >
+                      Listemden Çıkar
                     </span>
                   </i></a
                 >
@@ -46,6 +49,7 @@
         </div>
       </div>
     </div>
+
     <modals
       :modalData="modalData"
       :modalId="modalId"
@@ -94,6 +98,17 @@ export default {
       } finally {
         this.showLoading = false;
       }
+    },
+    deleteItem(favori) {
+      axios
+        .delete(`http://localhost:3000/favorites/${favori.id}`)
+        .then((delete_response) => {
+          console.log("Delete Response", delete_response);
+          this.favoriteList = this.favoriteList.filter(
+            (i) => i.id != favori.id
+          );
+        })
+        .catch((err) => console.log(err));
     },
   },
   created() {

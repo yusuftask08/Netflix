@@ -23,13 +23,20 @@
             class="card-img-top"
             alt="..."
           />
-          <div class="film_info">
+          <div class="film_info" v-if="isAuthenticated">
             <div class="list-icon-left">
-              <i class="fas fa-play" style="background: white; color: black">
-              </i>
-              <i class="fas fa-plus toolTip">
-                <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
-              </i>
+              <a
+                ><i class="fas fa-play" style="background: white; color: black">
+                </i
+              ></a>
+
+              <a @click="addFavorite(seriesList)"
+                ><i class="fas fa-plus toolTip">
+                  <span class="toolTiptext-sm tool-span-sm">
+                    Listeme ekle
+                  </span>
+                </i></a
+              >
               <i class="fas fa-chevron-down toolTip">
                 <span class="toolTiptext-sm tool-span-sm">
                   Daha fazla bilgi
@@ -51,6 +58,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
 import axios from "axios";
+import { mapGetters } from 'vuex';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default {
@@ -64,6 +72,25 @@ export default {
       seriesList: [],
     };
   },
+  methods: {
+    addFavorite(seriesList) {
+      axios
+        .post("http://localhost:3000/favorites", {
+          ...seriesList,
+          isFavorite: true,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));
+    },
+    onSwiper(swiper) {
+      console.log(swiper);
+    },
+    onSlideChange() {
+      console.log("slide change");
+    },
+  },
   created() {
     axios
       .get(
@@ -74,14 +101,10 @@ export default {
         this.seriesList = response.data.results;
       });
   },
-
-  methods: {
-    onSwiper(swiper) {
-      console.log(swiper);
-    },
-    onSlideChange() {
-      console.log("slide change");
-    },
+  computed: {
+    ...mapGetters({
+      isAuthenticated: "users/isAuthenticated",
+    }),
   },
 };
 </script>

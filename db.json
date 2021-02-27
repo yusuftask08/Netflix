@@ -10,85 +10,22 @@
   "favorites": [
     {
       "adult": false,
-      "backdrop_path": "/7KL4yJ4JsbtS1BNRilUApLvMnc5.jpg",
-      "genre_ids": [
-        18,
-        53
-      ],
-      "id": 649087,
-      "original_language": "sv",
-      "original_title": "Red Dot",
-      "overview": "On a hiking trip to rekindle their marriage, a couple find themselves fleeing for their lives in the unforgiving wilderness from an unknown shooter.",
-      "popularity": 2438.869,
-      "poster_path": "/xZ2KER2gOHbuHP2GJoODuXDSZCb.jpg",
-      "release_date": "2021-02-11",
-      "title": "Red Dot",
-      "video": false,
-      "vote_average": 6.2,
-      "vote_count": 204,
-      "isFavorite": true
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/srYya1ZlI97Au4jUYAktDe3avyA.jpg",
+      "backdrop_path": "/2va32apQP97gvUxaMnL5wYt4CRB.jpg",
       "genre_ids": [
         14,
-        28,
-        12
+        28
       ],
-      "id": 464052,
+      "id": 268,
       "original_language": "en",
-      "original_title": "Wonder Woman 1984",
-      "overview": "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
-      "popularity": 1666.794,
-      "poster_path": "/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
-      "release_date": "2020-12-16",
-      "title": "Wonder Woman 1984",
+      "original_title": "Batman",
+      "overview": "Batman must face his most ruthless nemesis when a deformed madman calling himself \"The Joker\" seizes control of Gotham's criminal underworld.",
+      "popularity": 25.185,
+      "poster_path": "/tDexQyu6FWltcd0VhEDK7uib42f.jpg",
+      "release_date": "1989-06-23",
+      "title": "Batman",
       "video": false,
-      "vote_average": 6.9,
-      "vote_count": 3867,
-      "isFavorite": true
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/vQJ3yBdF91tzd73G8seL5bOxfvG.jpg",
-      "genre_ids": [
-        53,
-        27,
-        18
-      ],
-      "id": 599281,
-      "original_language": "en",
-      "original_title": "Fear of Rain",
-      "overview": "A teenage girl living with schizophrenia begins to suspect her neighbor has kidnapped a child. Her parents try desperately to help her live a normal life, without exposing their own tragic secrets, and the only person who believes her is Caleb – a boy she isn’t even sure exists.",
-      "popularity": 1347.007,
-      "poster_path": "/b2shaNA4F8zNIwoRYr33lPTiFfl.jpg",
-      "release_date": "2021-02-12",
-      "title": "Fear of Rain",
-      "video": false,
-      "vote_average": 7.4,
-      "vote_count": 67,
-      "isFavorite": true
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/drulhSX7P5TQlEMQZ3JoXKSDEfz.jpg",
-      "genre_ids": [
-        18,
-        14,
-        878
-      ],
-      "id": 581389,
-      "original_language": "ko",
-      "original_title": "승리호",
-      "overview": "When the crew of a space junk collector ship called The Victory discovers a humanoid robot named Dorothy that's known to be a weapon of mass destruction, they get involved in a risky business deal which puts their lives at stake.",
-      "popularity": 1973.377,
-      "poster_path": "/bmemsraCG1kIthY74NjDnnLRT2Q.jpg",
-      "release_date": "2021-02-05",
-      "title": "Space Sweepers",
-      "video": false,
-      "vote_average": 7.3,
-      "vote_count": 271,
+      "vote_average": 7.2,
+      "vote_count": 5343,
       "isFavorite": true
     }
   ]

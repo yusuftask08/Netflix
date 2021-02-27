@@ -51,7 +51,7 @@ export default {
       isOpen: false,
       movie: [],
       modalData: [],
-      modalId: null,
+      modalId: [],
       videoId: [],
       showLoading: true,
     };

@@ -29,14 +29,14 @@
                 alt="..."
               />
 
-              <div class="film_info_original_card">
+              <div class="film_info_original_card"  v-if="isAuthenticated">
                 <div class="list-icon-left_original">
                   <i
                     class="fas fa-play right"
                     style="background: white; color: black"
                   >
                   </i>
-                  <i class="fas fa-plus toolTip right-2">
+                  <i class="fas fa-plus toolTip right-2" @click="addFavorite(gundem)">
                     <span class="toolTiptext tool-span"> Listeme ekle </span>
                   </i>
                   <a @click="showDetail(gundem)">
@@ -73,6 +73,7 @@ import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
 // Import Swiper styles
 import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
+import { mapGetters } from 'vuex';
 export default {
   components: {
     modals,
@@ -85,13 +86,24 @@ export default {
     return {
       gundemList: [],
       isOpen: false,
-      modalData: null,
-      modalId: null,
+      modalData:[],
+      modalId: [],
       videoId: [],
       showLoading: true,
     };
   },
   methods: {
+     addFavorite(gundem) {
+      axios
+        .post("http://localhost:3000/favorites", {
+          ...gundem,
+          isFavorite: true,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));
+    },
     async showDetail(gundem) {
       console.log("isOpenACILIYORMU :>> ", this.isOpen);
       this.showLoading = true;
@@ -133,6 +145,11 @@ export default {
         console.log("gundemListOriginalContent", response);
         this.gundemList = response.data.results;
       });
+  },
+   computed: {
+    ...mapGetters({
+      isAuthenticated: "users/isAuthenticated",
+    }),
   },
 };
 </script>

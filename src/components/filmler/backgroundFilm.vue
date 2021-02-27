@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="nextReleasesContainer">
-      <div class="videoContainer">
-        <video autoplay muted loop src="@/assets/outside.mp4"></video>
+      <div class="videoContainer" style="top: -50px !important">
+        <video autoplay muted loop src="@/assets/outside.mp4" ></video>
       </div>
 
       <div class="containerReleases">

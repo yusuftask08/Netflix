@@ -135,13 +135,11 @@ export default {
     onSlideChange() {
       console.log("slide change");
     },
-   
   },
   computed: {
     ...mapGetters({
       isAuthenticated: "users/isAuthenticated",
     }),
-   
   },
 
   created() {

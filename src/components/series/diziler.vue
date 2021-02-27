@@ -28,14 +28,21 @@
             class="card-img-top"
             alt="..."
           />
-          <div class="film_info">
+          <div class="film_info" v-if="isAuthenticated">
             <div class="list-icon-left">
-              <i class="fas fa-play" style="background: white; color: black">
-              </i>
-              <i class="fas fa-plus toolTip">
-                <span class="toolTiptext-sm tool-span-sm"> Listeme ekle </span>
-              </i>
-              <a @click="showDetail(popularList)"
+              <a
+                ><i class="fas fa-play" style="background: white; color: black">
+                </i
+              ></a>
+
+              <a @click="addFavorite(popularList)"
+                ><i class="fas fa-plus toolTip">
+                  <span class="toolTiptext-sm tool-span-sm">
+                    Listeme ekle
+                  </span>
+                </i></a
+              >
+              <a
                 ><i class="fas fa-chevron-down toolTip">
                   <span class="toolTiptext-sm tool-span-sm">
                     Daha fazla bilgi
@@ -47,7 +54,6 @@
         </div>
       </swiper-slide>
     </swiper>
-    <modals :modalData="modalData" v-model="isOpen" />
   </div>
 </template>
 <script>
@@ -60,6 +66,7 @@ import "swiper/components/navigation/navigation.scss";
 import "swiper/swiper.scss";
 import axios from "axios";
 import modals from "@/components/modal/modals";
+import { mapGetters } from "vuex";
 
 SwiperCore.use([Navigation, Pagination, A11y]);
 export default {
@@ -72,12 +79,21 @@ export default {
   data() {
     return {
       seriesPopularList: [],
-      modalData: [],
-      modalId: [],
       isOpen: false,
     };
   },
   methods: {
+    addFavorite(popularList) {
+      axios
+        .post("http://localhost:3000/favorites", {
+          ...popularList,
+          isFavorite: true,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));
+    },
     showDetail(popularList) {
       console.log("populardatacek ", popularList);
       this.isOpen = !this.isOpen;
@@ -113,6 +129,11 @@ export default {
         console.log("seriesPopularList", response);
         this.seriesPopularList = response.data.results;
       });
+  },
+  computed: {
+    ...mapGetters({
+      isAuthenticated: "users/isAuthenticated",
+    }),
   },
 };
 </script>
