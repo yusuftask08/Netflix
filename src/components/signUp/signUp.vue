@@ -325,7 +325,7 @@ footer {
   width: 100%;
   height: 250px;
   display: flex;
-  margin-top: -1px;
+  margin-top: 81px;
   justify-content: flex-start;
 }
 
