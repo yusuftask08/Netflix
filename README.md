@@ -3,7 +3,6 @@
 <h1 align="center">Hi 👋, I'm Yusuf</h1>
 <h3 align="center">A passionate Frontend developer from Turkey</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=yusuftask08&label=Profile%20views&color=0e75b6&style=flat" alt="yusuftask08" /> </p>
 
 - 🔭 I’m currently working on [vue-netlix-clone](https://github.com/yusuftask08/vue-netflix-clone)
 
