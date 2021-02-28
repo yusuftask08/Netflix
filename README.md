@@ -16,7 +16,12 @@
 
 - ⚡ Fun fact **I am Vue.js Lover**
 
+# vue-netflix-clone
+Projeyi kendimi geliştirmek amacıyla yaptım gelişimimde yararlı oldu. Projemi geliştirmeye devam etmekteyim bu süreçte yardımcı olmaktan çekinmeyin aşağıdaki adreslerden bana ulaşabilirsiniz.
 
+<a href="https://linkedin.com/in/www.linkedin.com/in/yusuftaskiran08" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="www.linkedin.com/in/yusuftaskiran08" height="30" width="40" /></a>
+
+- 📫 How to reach me **yusuftaskiran01@gmail.com**
 
 
 
