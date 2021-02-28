@@ -1,5 +1,26 @@
 # vue-netflix-clone
 
+<h1 align="center">Hi 👋, I'm Yusuf</h1>
+<h3 align="center">A passionate Frontend developer from Turkey</h3>
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=yusuftask08&label=Profile%20views&color=0e75b6&style=flat" alt="yusuftask08" /> </p>
+
+- 🔭 I’m currently working on [vue-netlix-clone](https://github.com/yusuftask08/vue-netflix-clone)
+
+- 🌱 I’m currently learning **Vue.js Javascript**
+
+- 👨‍💻 All of my projects are available at [https://github.com/yusuftask08](https://github.com/yusuftask08)
+
+- 💬 Ask me about **Vue.js,Javascript,Html,Css,Bootstrap**
+
+- 📫 How to reach me **yusuftaskiran01@gmail.com**
+
+- ⚡ Fun fact **I am Vue.js Lover**
+
+
+
+
+
 ## Project setup
 ```
 npm install
