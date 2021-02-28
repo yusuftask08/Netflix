@@ -1,5 +1,5 @@
 # vue-netflix-clone
-
+[url=https://hizliresim.com/v9mdcW][img]https://i.hizliresim.com/v9mdcW.png[/img][/url]
 <h1 align="center">Hi 👋, I'm Yusuf</h1>
 <h3 align="center">A passionate Frontend developer from Turkey</h3>
 
