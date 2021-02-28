@@ -1,6 +1,8 @@
 # vue-netflix-clone
 ![](https://i.imgyukle.com/2021/02/28/L7Y7PR.png)"
 ![](https://i.imgyukle.com/2021/02/28/L7H2qA.png)"
+![](https://i.imgyukle.com/2021/02/28/L7H76P.png)"
+
 
 
 
