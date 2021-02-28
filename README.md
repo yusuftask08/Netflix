@@ -1,4 +1,9 @@
 # vue-netflix-clone
+![](https://i.imgyukle.com/2021/02/28/L7LQTy.png)"
+
+
+
+
 
 <h1 align="center">Hi 👋, I'm Yusuf</h1>
 <h3 align="center">A passionate Frontend developer from Turkey</h3>
