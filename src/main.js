@@ -16,7 +16,6 @@ import {
 
 
 
-import VueYouTubeIframe from '@techassi/vue-youtube-iframe';
 
 const app = createApp(App);
 app.use(store);

@@ -7,7 +7,7 @@ export default createStore({
   state: {
     movies: [],
     baseURL: "https://api.themoviedb.org/3/search/movie",
-    apiKey: "7b97ca5600ae944d697e04e778928d05",
+    apiKey: "<//APIKEY\\>",
     property: "language=en-US&query=",
     propert: "page=1",
 

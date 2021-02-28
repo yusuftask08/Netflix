@@ -112,10 +112,7 @@ export default {
     ...mapActions({
       onSave: "users/register",
     }),
-    // onSave() {
-    //   console.log("this.userData   :>> ", this.userData);
-    //   this.$store.dispatch("users/register", { ...this.userData });
-    // },
+   
   },
 };
 </script>

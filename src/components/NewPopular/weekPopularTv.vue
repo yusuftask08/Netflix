@@ -140,7 +140,7 @@ export default {
   created() {
     axios
       .get(
-        "https://api.themoviedb.org/3/trending/tv/week?api_key=7b97ca5600ae944d697e04e778928d05"
+        "https://api.themoviedb.org/3/trending/tv/week?api_key=<//APIKEY\\>"
       )
       .then((response) => {
         console.log("weekPopularTV", response);

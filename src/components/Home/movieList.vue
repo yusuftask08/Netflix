@@ -66,7 +66,7 @@ export default {
       try {
         await axios
           .get(
-            `https://api.themoviedb.org/3/movie/${movie.id}?api_key=7b97ca5600ae944d697e04e778928d05&language=en-US&append_to_response=videos,credits,release_dates,similar`
+            `https://api.themoviedb.org/3/movie/${movie.id}?api_key=<//APIKEY\\>&language=en-US&append_to_response=videos,credits,release_dates,similar`
           )
           .then((response) => {
             console.log("iddetailvideos", response);
