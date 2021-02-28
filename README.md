@@ -1,6 +1,5 @@
 # vue-netflix-clone
-<img align="center" src="![](https://i.imgyukle.com/2021/02/28/L7Y7PR.png)" />
-
+![](https://i.imgyukle.com/2021/02/28/L7Y7PR.png)"
 
 
 <h1 align="center">Hi 👋, I'm Yusuf</h1>
