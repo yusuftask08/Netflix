@@ -29,7 +29,7 @@ It was useful in developing the project. I continue to develop my project from d
 - Axios
 - <a href="https://swiperjs.com/"> Swiper.Js </a>
 - <a href="https://www.themoviedb.org/"> The movie db APİ </a>
-- <a href="https://github.com/Techassi/vue-youtube-iframe#readme">Youtube Iframe APİ </a>
+- <a href="https://github.com/stepanowon/youtube-vue3">Youtube Iframe APİ </a>
 - <a href="https://github.com/DarkC0der11/vue-neat-modal#readme">Vue Neat Modal </a>
 
 
