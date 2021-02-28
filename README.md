@@ -1,5 +1,11 @@
 # vue-netflix-clone
-[url=https://hizliresim.com/v9mdcW][img]https://i.hizliresim.com/v9mdcW.png[/img][/url]
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="center" src="[url=https://hizliresim.com/v9mdcW][img]https://i.hizliresim.com/v9mdcW.png[/img][/url]" />
+</a>
+<a href="https://github.com/anuraghazra/convoychat">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=convoychat" />
+</a>
+
 <h1 align="center">Hi 👋, I'm Yusuf</h1>
 <h3 align="center">A passionate Frontend developer from Turkey</h3>
 
