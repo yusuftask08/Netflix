@@ -1,9 +1,7 @@
 # vue-netflix-clone
 <img align="center" src="![](https://i.imgyukle.com/2021/02/28/L7Y7PR.png)" />
 
-<a href="https://github.com/anuraghazra/convoychat">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=convoychat" />
-</a>
+
 
 <h1 align="center">Hi 👋, I'm Yusuf</h1>
 <h3 align="center">A passionate Frontend developer from Turkey</h3>
