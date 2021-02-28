@@ -7,7 +7,6 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@techassi/vue-youtube-iframe": "^1.0.3",
     "@vue/compiler-sfc": "^3.0.5",
     "axios": "^0.21.1",
     "swiper": "^6.4.11",
