@@ -26,8 +26,12 @@ It was useful in developing the project. I continue to develop my project from d
 ## The programs I use in my project
 - Vue.js , router , vuex,
 - Json.Server
+- Axios
 - <a href="https://swiperjs.com/"> Swiper.Js </a>
- 
+- <a href="https://www.themoviedb.org/"> The movie db APİ </a>
+- <a href="https://github.com/Techassi/vue-youtube-iframe#readme">Youtube Iframe APİ </a>
+- <a href="https://github.com/DarkC0der11/vue-neat-modal#readme">Vue Neat Modal </a>
+
 
 ## Project setup
 ```
