@@ -1,5 +1,6 @@
 # vue-netflix-clone
-![](https://i.imgyukle.com/2021/02/28/L7LQTy.png)"
+[![](http://img.youtube.com/vi/VXhBdPEmiDA/0.jpg)](http://www.youtube.com/watch?v=VXhBdPEmiDA " Netflix -clone")
+
 
 
 
