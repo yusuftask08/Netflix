@@ -1,5 +1,5 @@
 # vue-netflix-clone
-[![](http://img.youtube.com/vi/VXhBdPEmiDA/0.jpg)](http://www.youtube.com/watch?v=VXhBdPEmiDA " Netflix -clone")
+##############################[![](http://img.youtube.com/vi/VXhBdPEmiDA/0.jpg)](http://www.youtube.com/watch?v=VXhBdPEmiDA " Netflix -clone")
 <h1 align="center">Hi 👋, I'm Yusuf</h1>
 <h3 align="center">A passionate Frontend developer from Turkey</h3>
 
