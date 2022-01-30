@@ -7,7 +7,9 @@ It was useful in developing the project. I continue to develop my project from d
 
 
 ## TODO
-- Examining old written codes and converting them to clean code structure 
+- Code structure should be arranged as clean code
+- Login processes should use firabase instead of db.json
+- Browser must be made compatible
 ## The programs I use in my project
 - <a href="https://vuejs.org/"> Vue.js </a>
 - <a href="https://github.com/vuejs/vuex#readme"> Vuex </a>
