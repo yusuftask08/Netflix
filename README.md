@@ -1,4 +1,4 @@
- <h1 align="center">Vue Netflix Clone <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/netflix.svg" alt="www.netflix.com" height="30"    width="40" /><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/vuejs.svg"  height="30"    width="40" /></h1>
+ <h1 align="center">Vue Netflix Clone <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/netflix.svg" alt="www.netflix.com" height="30"    width="40" /></h1>
 <h1 align="center"><img align="center" src="http://img.youtube.com/vi/VXhBdPEmiDA/0.jpg" width="auto" /> </h1>
 
 Projeyi kendimi geliştirmek amacıyla yaptım gelişimimde yararlı oldu. Projemi geliştirmeye devam etmekteyim bu süreçte yardımcı olmaktan çekinmeyin aşağıdaki adreslerden bana ulaşabilirsiniz.
