@@ -1,38 +1,22 @@
-# vue-netflix-clone
-[![](http://img.youtube.com/vi/VXhBdPEmiDA/0.jpg)](http://www.youtube.com/watch?v=VXhBdPEmiDA " Netflix -clone")
+ <h1 align="center">Vue Netflix Clone <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/netflix.svg" alt="www.netflix.com" height="30"    width="40" /><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/vuejs.svg"  height="30"    width="40" /></h1>
+<h1 align="center"><img align="center" src="http://img.youtube.com/vi/VXhBdPEmiDA/0.jpg" width="auto" /> </h1>
 
-
-<h1 align="center">Hi 👋, I'm Yusuf</h1>
-<h3 align="center">A passionate Frontend developer from Turkey</h3>
-
-
-- 🔭 I’m currently working on [vue-netlix-clone](https://github.com/yusuftask08/vue-netflix-clone)
-
-- 🌱 I’m currently learning **Vue.js Javascript**
-
-- 👨‍💻 All of my projects are available at [https://github.com/yusuftask08](https://github.com/yusuftask08)
-
-- 💬 Ask me about **Vue.js,Javascript,Html,Css,Bootstrap**
-
-- 📫 How to reach me **yusuftaskiran01@gmail.com**
-
-- ⚡ Fun fact **I am Vue.js Lover**
-
-# vue-netflix-clone
 Projeyi kendimi geliştirmek amacıyla yaptım gelişimimde yararlı oldu. Projemi geliştirmeye devam etmekteyim bu süreçte yardımcı olmaktan çekinmeyin aşağıdaki adreslerden bana ulaşabilirsiniz.
 
-It was useful in developing the project. I continue to develop my project from different addresses below to assist me in this process.
+It was useful in developing the project. I continue to develop my project from different addresses below to assist me in this process.<a href="https://linkedin.com/in/www.linkedin.com/in/yusuftaskiran08" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="www.linkedin.com/in/yusuftaskiran08" height="30" width="40" /></a>
 
-<a href="https://linkedin.com/in/www.linkedin.com/in/yusuftaskiran08" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="www.linkedin.com/in/yusuftaskiran08" height="30" width="40" /></a>
 
+## TODO
+- Examining old written codes and converting them to clean code structure 
 ## The programs I use in my project
-- Vue.js , router , vuex,
-- Json.Server
-- Axios
+- <a href="https://vuejs.org/"> Vue.js </a>
+- <a href="https://github.com/vuejs/vuex#readme"> Vuex </a>
+- <a href="https://getbootstrap.com/"> Bootstrap </a>
+- <a href="https://axios-http.com/"> Axios </a>
 - <a href="https://swiperjs.com/"> Swiper.Js </a>
-- <a href="https://www.themoviedb.org/"> The movie db APİ </a>
-- <a href="https://github.com/stepanowon/youtube-vue3">Youtube Iframe APİ </a>
-- <a href="https://github.com/DarkC0der11/vue-neat-modal#readme">Vue Neat Modal </a>
+- <a href="https://www.themoviedb.org/"> The movie db api </a>
+- <a href="https://github.com/stepanowon/youtube-vue3">Youtube iframe api </a>
+- <a href="https://github.com/DarkC0der11/vue-neat-modal#readme">Vue neat modal </a>
 
 
 ## Project setup
